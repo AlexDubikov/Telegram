@@ -4806,11 +4806,9 @@
 		D0FFBDE01BAB0E7300F532C9 /* TGChannelMembersController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */; };
 		FA267A71203DD32900BA249B /* TapToSpeakView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA267A6F203DD32900BA249B /* TapToSpeakView.h */; };
 		FA267A72203DD32900BA249B /* TapToSpeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA267A70203DD32900BA249B /* TapToSpeakView.m */; };
-		FA267A74203DD76900BA249B /* YandexSpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA267A73203DD76800BA249B /* YandexSpeechKit.framework */; };
 		FA267A79203DD97900BA249B /* YSKRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA267A76203DD97700BA249B /* YSKRecognizerViewController.m */; };
 		FA267A7A203DD97900BA249B /* YSKRecognizerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FA267A77203DD97700BA249B /* YSKRecognizerViewController.h */; };
 		FA267A7B203DD97900BA249B /* YSKRecognizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA267A78203DD97800BA249B /* YSKRecognizerViewController.xib */; };
-		FA267A7D203DDE2200BA249B /* YandexSpeechKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA267A7C203DDE2100BA249B /* YandexSpeechKit.bundle */; };
 		FA267A7F203DDF3700BA249B /* microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA267A7E203DDF3600BA249B /* microphone@2x.png */; };
 		FA7E25B1203D9EC70081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B2203D9F550081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
@@ -11555,11 +11553,9 @@
 		D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelMembersController.m; sourceTree = "<group>"; };
 		FA267A6F203DD32900BA249B /* TapToSpeakView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TapToSpeakView.h; sourceTree = "<group>"; };
 		FA267A70203DD32900BA249B /* TapToSpeakView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TapToSpeakView.m; sourceTree = "<group>"; };
-		FA267A73203DD76800BA249B /* YandexSpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YandexSpeechKit.framework; sourceTree = "<group>"; };
 		FA267A76203DD97700BA249B /* YSKRecognizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSKRecognizerViewController.m; sourceTree = "<group>"; };
 		FA267A77203DD97700BA249B /* YSKRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSKRecognizerViewController.h; sourceTree = "<group>"; };
 		FA267A78203DD97800BA249B /* YSKRecognizerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSKRecognizerViewController.xib; sourceTree = "<group>"; };
-		FA267A7C203DDE2100BA249B /* YandexSpeechKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YandexSpeechKit.bundle; sourceTree = "<group>"; };
 		FA267A7E203DDF3600BA249B /* microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone@2x.png"; sourceTree = "<group>"; };
 		FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySpinServerSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -11640,7 +11636,6 @@
 				933AA4A118609ADB000AA848 /* QuickLook.framework in Frameworks */,
 				93EB7AAE184F508D00891DBF /* Accelerate.framework in Frameworks */,
 				933E6A3F170B300100651252 /* MediaPlayer.framework in Frameworks */,
-				FA267A74203DD76900BA249B /* YandexSpeechKit.framework in Frameworks */,
 				93A109BF1705D77C00FE4F89 /* MobileCoreServices.framework in Frameworks */,
 				9389A8D51697A31D00B68E92 /* AssetsLibrary.framework in Frameworks */,
 				93985171162F8A5A009DBCA5 /* MapKit.framework in Frameworks */,
@@ -19560,8 +19555,6 @@
 				0929AA6F1E9CED9A00AA97C0 /* Icon-87.png */,
 				D064421C1E4E2A3600394D5F /* AppStore.xcconfig */,
 				93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */,
-				FA267A7C203DDE2100BA249B /* YandexSpeechKit.bundle */,
-				FA267A73203DD76800BA249B /* YandexSpeechKit.framework */,
 				FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */,
 				933E6A3E170B300100651252 /* MediaPlayer.framework */,
 				93A109BE1705D77A00FE4F89 /* MobileCoreServices.framework */,
@@ -24835,7 +24828,6 @@
 				D0E352841E5E4127007E6EB8 /* stp_card_jcb@2x.png in Resources */,
 				09C9EE121F4C947D0011145F /* InstantViewShareIcon@2x.png in Resources */,
 				934134721853A12200480294 /* ModernMenuDeleteIcon@2x.png in Resources */,
-				FA267A7D203DDE2200BA249B /* YandexSpeechKit.bundle in Resources */,
 				D0EA690C1A039F7C00D1F747 /* RecentSearchResultsItemLoupe@2x.png in Resources */,
 				09EEAA231E6E39C200246830 /* MessageCallIncomingIcon@3x.png in Resources */,
 				D08696B51943A8B300770FE7 /* pad-builtin-wallpaper-2-thumbnail.jpg in Resources */,
