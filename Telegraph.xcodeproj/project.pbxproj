@@ -4811,6 +4811,7 @@
 		FA267A7A203DD97900BA249B /* YSKRecognizerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FA267A77203DD97700BA249B /* YSKRecognizerViewController.h */; };
 		FA267A7B203DD97900BA249B /* YSKRecognizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA267A78203DD97800BA249B /* YSKRecognizerViewController.xib */; };
 		FA267A7D203DDE2200BA249B /* YandexSpeechKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA267A7C203DDE2100BA249B /* YandexSpeechKit.bundle */; };
+		FA267A7F203DDF3700BA249B /* microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA267A7E203DDF3600BA249B /* microphone@2x.png */; };
 		FA7E25B1203D9EC70081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B2203D9F550081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B3203D9F550081FDC0 /* MySpinServerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -11559,6 +11560,7 @@
 		FA267A77203DD97700BA249B /* YSKRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSKRecognizerViewController.h; sourceTree = "<group>"; };
 		FA267A78203DD97800BA249B /* YSKRecognizerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSKRecognizerViewController.xib; sourceTree = "<group>"; };
 		FA267A7C203DDE2100BA249B /* YandexSpeechKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YandexSpeechKit.bundle; sourceTree = "<group>"; };
+		FA267A7E203DDF3600BA249B /* microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone@2x.png"; sourceTree = "<group>"; };
 		FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySpinServerSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -22784,6 +22786,7 @@
 		FA267A75203DD95E00BA249B /* Recognition */ = {
 			isa = PBXGroup;
 			children = (
+				FA267A7E203DDF3600BA249B /* microphone@2x.png */,
 				FA267A77203DD97700BA249B /* YSKRecognizerViewController.h */,
 				FA267A76203DD97700BA249B /* YSKRecognizerViewController.m */,
 				FA267A78203DD97800BA249B /* YSKRecognizerViewController.xib */,
@@ -24958,6 +24961,7 @@
 				93992D8F182A706C00F29746 /* ModernBubbleIncomingPartial@2x.png in Resources */,
 				D0B9B19519CA324D0020C9CF /* LaunchScreen.xib in Resources */,
 				D055A7E31A6882C000A1D48C /* SharedMediaNavigationBarArrow.png in Resources */,
+				FA267A7F203DDF3700BA249B /* microphone@2x.png in Resources */,
 				091D23771E609CC400A6A322 /* voip_fail.caf in Resources */,
 				0918B6DA1FA109D700EC302B /* SettingsCameraIcon@3x.png in Resources */,
 				FA267A7B203DD97900BA249B /* YSKRecognizerViewController.xib in Resources */,

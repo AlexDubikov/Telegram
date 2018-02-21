@@ -61,7 +61,7 @@
     controller.delegate = self;
     
     // Show YSKSpeechRecognitionViewController.
-    [self presentViewController:controller animated:YES completion:nil];
+    [self.parentViewController presentViewController:controller animated:YES completion:nil];
 }
 
 #pragma mark - YSKSpeechRecognitionViewControllerDelegate
