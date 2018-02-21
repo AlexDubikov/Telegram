@@ -6,7 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <YSKRecognizerViewController.h>
 
 @interface TapToSpeakView : UIView
+
+@property (nonatomic, strong) YSKRecognizerViewController *controller;
 
 @end

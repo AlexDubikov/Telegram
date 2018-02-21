@@ -6,6 +6,7 @@
 //
 
 #import "TapToSpeakView.h"
+#import <YandexSpeechKit/SpeechKit.h>
 
 @implementation TapToSpeakView
 
@@ -21,7 +22,11 @@
 
 -(void)configure
 {
-	
+    _controller = [[YSKRecognizerViewController alloc] initWithLanguage:YSKRecognitionLanguageEnglish model:YSKRecognitionModelGeneral];
+    _controller.view.frame = self.bounds;
+    _controller.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
+    [self addSubview:_controller.view];
 }
 
 @end
