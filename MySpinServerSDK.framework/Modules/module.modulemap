@@ -1,0 +1,6 @@
+framework module MySpinServerSDK {
+  umbrella header "MySpinServerSDK.h"
+
+  export *
+  module * { export * }
+}

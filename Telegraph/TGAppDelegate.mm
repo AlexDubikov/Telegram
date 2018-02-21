@@ -151,6 +151,8 @@
 
 #import "TGLegacyComponentsContext.h"
 
+#import <MySpinServerSDK/MySpinServerSDK.h>
+
 NSString *TGDeviceProximityStateChangedNotification = @"TGDeviceProximityStateChangedNotification";
 
 CFAbsoluteTime applicationStartupTimestamp = 0;
@@ -177,7 +179,7 @@ TGTelegraph *telegraph = nil;
 
 @end
 
-@interface TGAppDelegate () <BITHockeyManagerDelegate, BITUpdateManagerDelegate, BITCrashManagerDelegate, AVAudioPlayerDelegate, PKPushRegistryDelegate>
+@interface TGAppDelegate () <BITHockeyManagerDelegate, BITUpdateManagerDelegate, BITCrashManagerDelegate, AVAudioPlayerDelegate, PKPushRegistryDelegate, MySpinServerSDKDelegate>
 {
     bool _inBackground;
     bool _enteringForeground;
@@ -275,7 +277,7 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
     NSNumber *logsEnabled = [[NSUserDefaults standardUserDefaults] objectForKey:@"__logsEnabled"];
 #if (defined(DEBUG) || defined(INTERNAL_RELEASE)) && !defined(DISABLE_LOGGING)
     if (logsEnabled == nil)
-        return true;
+        return false;
 #endif
     return [logsEnabled boolValue];
 }
@@ -864,7 +866,14 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
     [[[TGBridgeServer instanceSignal] onNext:^(TGBridgeServer *server) {
         [server startServices];
     }] startWithNext:nil];
-    
+	
+	NSURL* url = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
+	[[MySpinServerSDK sharedInstance] setLogLevel:MySpinLogLevelDebug
+																														andLogComponents:MySpinLogComponentAll];
+	[MySpinServerSDK sharedInstance].delegate = self;
+	[[MySpinServerSDK sharedInstance] setLaunchURL:url];
+	[[MySpinServerSDK sharedInstance] start];
+	
     return true;
 }
 
@@ -2806,6 +2815,7 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (BOOL)application:(UIApplication *)__unused application openURL:(NSURL *)url sourceApplication:(NSString *)__unused sourceApplication annotation:(id)__unused annotation
 {
+		[[MySpinServerSDK sharedInstance] setLaunchURL:url];
     [self handleOpenDocument:url animated:false];
     
     return true;
@@ -4427,6 +4437,14 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
     CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
     if (CGRectContainsPoint(statusBarFrame, location))
         _statusBarPressedPipe.sink(@true);
+}
+
+- (nonnull UIViewController *)viewControllerForConnectedModeOnRemoteScreen:(CGSize)remoteScreenSize {
+	return self.rootController;
+}
+
+- (nonnull UIViewController *)viewControllerForDisconnectedMode {
+	return self.rootController;
 }
 
 @end

@@ -106,6 +106,8 @@ extern NSString *TGDeviceProximityStateChangedNotification;
 @property (nonatomic, readonly) bool inBackground;
 @property (nonatomic, readonly) bool backgroundTaskOngoing;
 
+@property (nonatomic, strong) UIViewController *disconnectedController;
+
 @property (nonatomic) int showCallsTab;
 - (bool)callsTabFileExists;
 - (void)resetCallsTab;

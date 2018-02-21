@@ -1573,10 +1573,10 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
 - (void)processAuthorizedWithUserId:(int)uid clientIsActivated:(bool)clientIsActivated
 {
     if (iosMajorVersion() >= 10) {
-        TGDispatchOnMainThread(^{
-            [INPreferences requestSiriAuthorization:^(__unused INSiriAuthorizationStatus status) {
-            }];
-        });
+//        TGDispatchOnMainThread(^{
+//            [INPreferences requestSiriAuthorization:^(__unused INSiriAuthorizationStatus status) {
+//            }];
+//        });
     }
     
     [ActionStageInstance() dispatchOnStageQueue:^
