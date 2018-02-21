@@ -130,9 +130,17 @@
     
     self.view.backgroundColor = UIColorRGB(0xefeff4);
     
-    _mainView = [[TGTabletMainView alloc] initWithFrame:self.view.bounds];
+    CGRect mainViewFrame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height*0.7);
+    CGRect callKeyboardFrame = CGRectMake(0, self.view.bounds.size.height*0.7, self.view.bounds.size.width, self.view.bounds.size.height*0.3);
+    
+    _mainView = [[TGTabletMainView alloc] initWithFrame:mainViewFrame];
+    _tapToSpeakView = [[TapToSpeakView alloc] initWithFrame:callKeyboardFrame];
+
     _mainView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _tapToSpeakView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
     [self.view addSubview:_mainView];
+    [self.view addSubview:_tapToSpeakView];
     
     [self updateSizeClass];
     

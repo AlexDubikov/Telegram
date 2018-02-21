@@ -4804,6 +4804,8 @@
 		D0FD89A3156FD4FC00CC3714 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FD89A2156FD4FB00CC3714 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D0FFBDDF1BAB0E7300F532C9 /* TGChannelMembersController.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */; };
 		D0FFBDE01BAB0E7300F532C9 /* TGChannelMembersController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */; };
+		FA267A71203DD32900BA249B /* TapToSpeakView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA267A6F203DD32900BA249B /* TapToSpeakView.h */; };
+		FA267A72203DD32900BA249B /* TapToSpeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA267A70203DD32900BA249B /* TapToSpeakView.m */; };
 		FA7E25B1203D9EC70081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B2203D9F550081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B3203D9F550081FDC0 /* MySpinServerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -11545,6 +11547,8 @@
 		D0FD89A2156FD4FB00CC3714 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGChannelMembersController.h; sourceTree = "<group>"; };
 		D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelMembersController.m; sourceTree = "<group>"; };
+		FA267A6F203DD32900BA249B /* TapToSpeakView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TapToSpeakView.h; sourceTree = "<group>"; };
+		FA267A70203DD32900BA249B /* TapToSpeakView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TapToSpeakView.m; sourceTree = "<group>"; };
 		FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySpinServerSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -17006,6 +17010,8 @@
 			children = (
 				D044CBBB192AA0F00001C986 /* TGRootController.h */,
 				D044CBBC192AA0F00001C986 /* TGRootController.m */,
+				FA267A6F203DD32900BA249B /* TapToSpeakView.h */,
+				FA267A70203DD32900BA249B /* TapToSpeakView.m */,
 				D073B9C0192AB02A00BBD071 /* TGTabletMainView.h */,
 				D073B9C1192AB02A00BBD071 /* TGTabletMainView.m */,
 			);
@@ -23247,6 +23253,7 @@
 				D051AF151AF3EAAB003AFD52 /* TGStickersSignals.h in Headers */,
 				D01162101F41F1340039383E /* TLDestroySessionsRes.h in Headers */,
 				D0249BD61ABF5B470076ECBF /* GDImageCell.h in Headers */,
+				FA267A71203DD32900BA249B /* TapToSpeakView.h in Headers */,
 				D06B21D81E49CFA500EE2F70 /* TLPayments_PaymentCeceipt$payments_paymentReceipt.h in Headers */,
 				68B6398E1BB2506F00205AC3 /* SThreadPoolTask.h in Headers */,
 				D01161B41F41F1340039383E /* TLCdnFileHash.h in Headers */,
@@ -27566,6 +27573,7 @@
 				D01160211F41F1310039383E /* TLRPCmessages_getPinnedDialogs.mm in Sources */,
 				D0177B7F1F2683BF0044446D /* (null) in Sources */,
 				D0FC35391B3CF0460041A938 /* TGMusicPlayerItemSignals.m in Sources */,
+				FA267A72203DD32900BA249B /* TapToSpeakView.m in Sources */,
 				D0115F271F41F1300039383E /* TLRPCauth_cancelCode.mm in Sources */,
 				D008C1FA1C18E088007D2855 /* TGBotContextResults.m in Sources */,
 				D011607F1F41F1320039383E /* TLRPCphone_declineCall.mm in Sources */,
