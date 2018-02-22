@@ -4806,10 +4806,8 @@
 		D0FFBDE01BAB0E7300F532C9 /* TGChannelMembersController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */; };
 		FA267A71203DD32900BA249B /* TapToSpeakView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA267A6F203DD32900BA249B /* TapToSpeakView.h */; };
 		FA267A72203DD32900BA249B /* TapToSpeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA267A70203DD32900BA249B /* TapToSpeakView.m */; };
-		FA267A79203DD97900BA249B /* YSKRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA267A76203DD97700BA249B /* YSKRecognizerViewController.m */; };
-		FA267A7A203DD97900BA249B /* YSKRecognizerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FA267A77203DD97700BA249B /* YSKRecognizerViewController.h */; };
-		FA267A7B203DD97900BA249B /* YSKRecognizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA267A78203DD97800BA249B /* YSKRecognizerViewController.xib */; };
-		FA267A7F203DDF3700BA249B /* microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA267A7E203DDF3600BA249B /* microphone@2x.png */; };
+		FA267B89203E1F3400BA249B /* microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA267B88203E1F3400BA249B /* microphone@2x.png */; };
+		FA267B8B203E25E500BA249B /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA267B8A203E25E400BA249B /* Speech.framework */; };
 		FA7E25B1203D9EC70081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B2203D9F550081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B3203D9F550081FDC0 /* MySpinServerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -11553,10 +11551,8 @@
 		D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelMembersController.m; sourceTree = "<group>"; };
 		FA267A6F203DD32900BA249B /* TapToSpeakView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TapToSpeakView.h; sourceTree = "<group>"; };
 		FA267A70203DD32900BA249B /* TapToSpeakView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TapToSpeakView.m; sourceTree = "<group>"; };
-		FA267A76203DD97700BA249B /* YSKRecognizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSKRecognizerViewController.m; sourceTree = "<group>"; };
-		FA267A77203DD97700BA249B /* YSKRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSKRecognizerViewController.h; sourceTree = "<group>"; };
-		FA267A78203DD97800BA249B /* YSKRecognizerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSKRecognizerViewController.xib; sourceTree = "<group>"; };
-		FA267A7E203DDF3600BA249B /* microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone@2x.png"; sourceTree = "<group>"; };
+		FA267B88203E1F3400BA249B /* microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone@2x.png"; sourceTree = "<group>"; };
+		FA267B8A203E25E400BA249B /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySpinServerSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -11601,6 +11597,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA267B8B203E25E500BA249B /* Speech.framework in Frameworks */,
 				D08805B3156E8F3600311537 /* Foundation.framework in Frameworks */,
 				D08805B1156E8F3600311537 /* UIKit.framework in Frameworks */,
 				D0AE3ECA1F6847660069BC90 /* GLKit.framework in Frameworks */,
@@ -19596,6 +19593,7 @@
 		D08805AF156E8F3600311537 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA267B8A203E25E400BA249B /* Speech.framework */,
 				69F8429E1E67589900C110F7 /* libtgvoip.framework */,
 				D0DB57BC1E5C56580071854C /* PassKit.framework */,
 				6811FF391E0016E700ADC8ED /* PushKit.framework */,
@@ -22779,10 +22777,7 @@
 		FA267A75203DD95E00BA249B /* Recognition */ = {
 			isa = PBXGroup;
 			children = (
-				FA267A7E203DDF3600BA249B /* microphone@2x.png */,
-				FA267A77203DD97700BA249B /* YSKRecognizerViewController.h */,
-				FA267A76203DD97700BA249B /* YSKRecognizerViewController.m */,
-				FA267A78203DD97800BA249B /* YSKRecognizerViewController.xib */,
+				FA267B88203E1F3400BA249B /* microphone@2x.png */,
 				FA267A6F203DD32900BA249B /* TapToSpeakView.h */,
 				FA267A70203DD32900BA249B /* TapToSpeakView.m */,
 			);
@@ -23156,7 +23151,6 @@
 				09D65FC81F39DD7000854B1D /* TGChannelStickersController.h in Headers */,
 				D02478A41E4BCB2A0083C3F3 /* TGPaymentReceiptController.h in Headers */,
 				09C05D651E84113100ACD425 /* TGRoundMessageViewModel.h in Headers */,
-				FA267A7A203DD97900BA249B /* YSKRecognizerViewController.h in Headers */,
 				D0C0B5731ED86096000F4D2C /* TLRPCchannels_getAdminLog.h in Headers */,
 				D0115EF21F41F12F0039383E /* TLRichText.h in Headers */,
 				D0115FDE1F41F1310039383E /* TLRPCmessages_clearRecentStickers.h in Headers */,
@@ -24953,10 +24947,8 @@
 				93992D8F182A706C00F29746 /* ModernBubbleIncomingPartial@2x.png in Resources */,
 				D0B9B19519CA324D0020C9CF /* LaunchScreen.xib in Resources */,
 				D055A7E31A6882C000A1D48C /* SharedMediaNavigationBarArrow.png in Resources */,
-				FA267A7F203DDF3700BA249B /* microphone@2x.png in Resources */,
 				091D23771E609CC400A6A322 /* voip_fail.caf in Resources */,
 				0918B6DA1FA109D700EC302B /* SettingsCameraIcon@3x.png in Resources */,
-				FA267A7B203DD97900BA249B /* YSKRecognizerViewController.xib in Resources */,
 				D035EBBC194868B700EEEC17 /* Localizable.strings in Resources */,
 				D0177B971F26869C0044446D /* (null) in Resources */,
 				68B22D2E1C171BD300EE8FF9 /* SettingsWallpaperIcon@2x.png in Resources */,
@@ -25407,6 +25399,7 @@
 				D0590D9119A78C9D0082FFC8 /* ModernMessageBroadcastIconWhite@2x.png in Resources */,
 				9315E4E5186AFE7A008DD74D /* Icon-Small@2x.png in Resources */,
 				09361CC91E725DCF007ED29C /* ModernBubbleIncomingFullHighlightedPad@3x.png in Resources */,
+				FA267B89203E1F3400BA249B /* microphone@2x.png in Resources */,
 				D025669E1AD2B8E3007C19C1 /* InlineMediaInstagramVideoIcon@3x.png in Resources */,
 				936219D9186460F600C52870 /* 110.m4a in Resources */,
 				930AD09E173C120D003DABCE /* MapCalloutCenter_Highlighted@2x.png in Resources */,
@@ -26864,7 +26857,6 @@
 				68D3C1B91BD936D2003F8131 /* TGNotificationMediaPreviewView.m in Sources */,
 				D01D7D5C19DE0C0B00955BDE /* TGModernConversationActivity.m in Sources */,
 				D011604D1F41F1310039383E /* TLRPCmessages_reportSpam.mm in Sources */,
-				FA267A79203DD97900BA249B /* YSKRecognizerViewController.m in Sources */,
 				D01D7D4819DDFA0F00955BDE /* TGYoutubeThumbnailDataSource.m in Sources */,
 				D0983D4719CB9A4300CE5BB0 /* TGChangePrivacySettingsFutureAction.m in Sources */,
 				9332690C16595BDB00E87917 /* TGMenuItem.m in Sources */,

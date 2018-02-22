@@ -153,9 +153,6 @@
 
 #import <MySpinServerSDK/MySpinServerSDK.h>
 
-#import <YandexSpeechKit/SpeechKit.h>
-
-
 NSString *TGDeviceProximityStateChangedNotification = @"TGDeviceProximityStateChangedNotification";
 
 CFAbsoluteTime applicationStartupTimestamp = 0;
@@ -876,8 +873,6 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 	[MySpinServerSDK sharedInstance].delegate = self;
 	[[MySpinServerSDK sharedInstance] setLaunchURL:url];
 	[[MySpinServerSDK sharedInstance] start];
-	
-    [[YSKSpeechKit sharedInstance] configureWithAPIKey:@"6bf6b984-d825-4ce0-89cf-9203682117e5"];
     
     return true;
 }

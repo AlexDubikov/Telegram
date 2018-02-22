@@ -120,7 +120,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>67608</string>
+	<string>67631</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>ITSAppUsesNonExemptEncryption </key>
@@ -184,6 +184,8 @@
 	<string>We need this so that you can share photos and videos from your photo library.</string>
 	<key>NSSiriUsageDescription</key>
 	<string>You can use Siri to send messages.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Speech recognition will be used to determine which words you speak into this device's microphone.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>org.telegram.conversation</string>

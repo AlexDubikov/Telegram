@@ -135,8 +135,6 @@
     
     _mainView = [[TGTabletMainView alloc] initWithFrame:mainViewFrame];
     _tapToSpeakView = [[TapToSpeakView alloc] initWithFrame:callKeyboardFrame];
-
-    [self addChildViewController:_tapToSpeakView.controller];
     
     _mainView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _tapToSpeakView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
