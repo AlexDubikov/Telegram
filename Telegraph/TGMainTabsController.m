@@ -331,9 +331,9 @@
         
         _tabButtons = [[NSMutableArray alloc] init];
         
-        _contactsButton = [[TGTabBarButton alloc] initWithImage:presentation.images.tabBarContactsIcon title:TGLocalized(@"Contacts.TabTitle") presentation:presentation];
+        _contactsButton = [[TGTabBarButton alloc] initWithImage:presentation.images.tabBarSettingsIcon title:TGLocalized(@"Route") presentation:presentation];
         _chatsButton = [[TGTabBarButton alloc] initWithImage:presentation.images.tabBarChatsIcon title:TGLocalized(@"DialogList.TabTitle") presentation:presentation];
-        _settingsButton = [[TGTabBarButton alloc] initWithImage:presentation.images.tabBarSettingsIcon title:TGLocalized(@"Settings.TabTitle") presentation:presentation];
+        _settingsButton = [[TGTabBarButton alloc] initWithImage:presentation.images.tabBarContactsIcon title:TGLocalized(@"Profile") presentation:presentation];
         _callsButton = [[TGTabBarButton alloc] initWithImage:presentation.images.tabBarCallsIcon title:TGLocalized(@"Calls.TabTitle") presentation:presentation];
         _callsButton.hidden = true;
         _callsHidden = true;
@@ -356,9 +356,9 @@
     _backgroundView.backgroundColor = presentation.pallete.barBackgroundColor;
     _stripeView.backgroundColor = presentation.pallete.barSeparatorColor;
     
-    [_contactsButton setImage:presentation.images.tabBarContactsIcon presentation:presentation];
+    [_contactsButton setImage:presentation.images.tabBarSettingsIcon presentation:presentation];
     [_chatsButton setImage:presentation.images.tabBarChatsIcon presentation:presentation];
-    [_settingsButton setImage:presentation.images.tabBarSettingsIcon presentation:presentation];
+    [_settingsButton setImage:presentation.images.tabBarContactsIcon presentation:presentation];
     [_callsButton setImage:presentation.images.tabBarCallsIcon presentation:presentation];
     
     _chatsButton = [[TGTabBarButton alloc] initWithImage:presentation.images.tabBarChatsIcon title:TGLocalized(@"DialogList.TabTitle") presentation:presentation];

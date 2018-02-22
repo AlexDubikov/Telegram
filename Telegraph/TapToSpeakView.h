@@ -17,5 +17,7 @@
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UIButton *recordButton;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic) BOOL sent;
+@property (nonatomic) BOOL done;
 
 @end
