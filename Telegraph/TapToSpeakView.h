@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic) BOOL sent;
 @property (nonatomic) BOOL done;
+@property (nonatomic) BOOL vertical;
 
 @end

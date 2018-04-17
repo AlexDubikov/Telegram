@@ -87,7 +87,6 @@
     _audioEngine = [AVAudioEngine new];
     
     _recordButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
-    _recordButton.center = CGPointMake(self.center.x, 55);
     [_recordButton setImage:[UIImage imageNamed:@"microphone"] forState:UIControlStateNormal];
     [_recordButton addTarget:self action:@selector(startRecording) forControlEvents:UIControlEventTouchUpInside];
     
@@ -98,21 +97,39 @@
     
     [self addSubview:_recordButton];
     [self addSubview:_textView];
-
+    
+    if (self.bounds.size.width > self.frame.origin.y) {
+        _vertical = NO;
+    } else {
+        _vertical = YES;
+    }
+    
     [SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
     }];
 }
 
 -(void)layoutSubviews {
     [super layoutSubviews];
+    
     _recordButton.frame = CGRectMake(0, 0, 90, 90);
-    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        _recordButton.center = CGPointMake(55, self.bounds.size.height/2);
+    
+    if (_vertical == NO) {
+        
+        if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+            _recordButton.center = CGPointMake(self.center.x, 370);
+            
+        } else {
+            _recordButton.center = CGPointMake(self.center.x, 55);
+        }
         
     } else {
-        _recordButton.center = CGPointMake(self.center.x, 55);
+        if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+            _recordButton.center = CGPointMake(self.center.x, 55);
+            
+        } else {
+            _recordButton.frame = CGRectMake(self.frame.size.width / 2 - 45, - self.frame.origin.y / 2, 90, 90);
+        }
     }
-
     _textView.frame = CGRectMake(0, 100, self.bounds.size.width, 200);
 }
 
