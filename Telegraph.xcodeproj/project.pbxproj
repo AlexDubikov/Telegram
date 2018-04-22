@@ -4804,13 +4804,16 @@
 		D0FD89A3156FD4FC00CC3714 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FD89A2156FD4FB00CC3714 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D0FFBDDF1BAB0E7300F532C9 /* TGChannelMembersController.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */; };
 		D0FFBDE01BAB0E7300F532C9 /* TGChannelMembersController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */; };
-		FA267A71203DD32900BA249B /* TapToSpeakView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA267A6F203DD32900BA249B /* TapToSpeakView.h */; };
-		FA267A72203DD32900BA249B /* TapToSpeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA267A70203DD32900BA249B /* TapToSpeakView.m */; };
-		FA267B89203E1F3400BA249B /* microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA267B88203E1F3400BA249B /* microphone@2x.png */; };
 		FA267B8B203E25E500BA249B /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA267B8A203E25E400BA249B /* Speech.framework */; };
 		FA7E25B1203D9EC70081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B2203D9F550081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B3203D9F550081FDC0 /* MySpinServerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA806D8A208C8B92006E9CD7 /* SpeechSynthesizer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D86208C8B90006E9CD7 /* SpeechSynthesizer.h */; };
+		FA806D8B208C8B92006E9CD7 /* SpeechRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA806D87208C8B91006E9CD7 /* SpeechRecognizer.m */; };
+		FA806D8C208C8B92006E9CD7 /* SpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA806D88208C8B91006E9CD7 /* SpeechSynthesizer.m */; };
+		FA806D8D208C8B92006E9CD7 /* SpeechRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D89208C8B92006E9CD7 /* SpeechRecognizer.h */; };
+		FA806D91208CA084006E9CD7 /* V2VTableDatasource.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */; };
+		FA806D92208CA084006E9CD7 /* V2VTableDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */; };
 		FA9DBC822088E857006A090A /* V2VInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9DBC802088E857006A090A /* V2VInstance.h */; };
 		FA9DBC832088E857006A090A /* V2VInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9DBC812088E857006A090A /* V2VInstance.m */; };
 		FAA6189C2086A7440049A384 /* V2VController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA6189A2086A7440049A384 /* V2VController.h */; };
@@ -11553,11 +11556,14 @@
 		D0FD89A2156FD4FB00CC3714 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGChannelMembersController.h; sourceTree = "<group>"; };
 		D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelMembersController.m; sourceTree = "<group>"; };
-		FA267A6F203DD32900BA249B /* TapToSpeakView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TapToSpeakView.h; sourceTree = "<group>"; };
-		FA267A70203DD32900BA249B /* TapToSpeakView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TapToSpeakView.m; sourceTree = "<group>"; };
-		FA267B88203E1F3400BA249B /* microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone@2x.png"; sourceTree = "<group>"; };
 		FA267B8A203E25E400BA249B /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySpinServerSDK.framework; sourceTree = "<group>"; };
+		FA806D86208C8B90006E9CD7 /* SpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechSynthesizer.h; sourceTree = "<group>"; };
+		FA806D87208C8B91006E9CD7 /* SpeechRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechRecognizer.m; sourceTree = "<group>"; };
+		FA806D88208C8B91006E9CD7 /* SpeechSynthesizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechSynthesizer.m; sourceTree = "<group>"; };
+		FA806D89208C8B92006E9CD7 /* SpeechRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechRecognizer.h; sourceTree = "<group>"; };
+		FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VTableDatasource.h; sourceTree = "<group>"; };
+		FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VTableDatasource.m; sourceTree = "<group>"; };
 		FA9DBC802088E857006A090A /* V2VInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VInstance.h; sourceTree = "<group>"; };
 		FA9DBC812088E857006A090A /* V2VInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VInstance.m; sourceTree = "<group>"; };
 		FAA6189A2086A7440049A384 /* V2VController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VController.h; sourceTree = "<group>"; };
@@ -17023,7 +17029,7 @@
 			children = (
 				D044CBBB192AA0F00001C986 /* TGRootController.h */,
 				D044CBBC192AA0F00001C986 /* TGRootController.m */,
-				FA267A75203DD95E00BA249B /* Recognition */,
+				FA267A75203DD95E00BA249B /* V2V */,
 				D073B9C0192AB02A00BBD071 /* TGTabletMainView.h */,
 				D073B9C1192AB02A00BBD071 /* TGTabletMainView.m */,
 			);
@@ -22782,16 +22788,27 @@
 			name = Tabs;
 			sourceTree = "<group>";
 		};
-		FA267A75203DD95E00BA249B /* Recognition */ = {
+		FA267A75203DD95E00BA249B /* V2V */ = {
 			isa = PBXGroup;
 			children = (
-				FA267B88203E1F3400BA249B /* microphone@2x.png */,
-				FA267A6F203DD32900BA249B /* TapToSpeakView.h */,
-				FA267A70203DD32900BA249B /* TapToSpeakView.m */,
+				FA806D8E208C8BFB006E9CD7 /* Recognition */,
 				FAA6189A2086A7440049A384 /* V2VController.h */,
 				FAA6189B2086A7440049A384 /* V2VController.m */,
 				FA9DBC802088E857006A090A /* V2VInstance.h */,
 				FA9DBC812088E857006A090A /* V2VInstance.m */,
+				FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */,
+				FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */,
+			);
+			name = V2V;
+			sourceTree = "<group>";
+		};
+		FA806D8E208C8BFB006E9CD7 /* Recognition */ = {
+			isa = PBXGroup;
+			children = (
+				FA806D89208C8B92006E9CD7 /* SpeechRecognizer.h */,
+				FA806D87208C8B91006E9CD7 /* SpeechRecognizer.m */,
+				FA806D86208C8B90006E9CD7 /* SpeechSynthesizer.h */,
+				FA806D88208C8B91006E9CD7 /* SpeechSynthesizer.m */,
 			);
 			name = Recognition;
 			sourceTree = "<group>";
@@ -23281,7 +23298,6 @@
 				D051AF151AF3EAAB003AFD52 /* TGStickersSignals.h in Headers */,
 				D01162101F41F1340039383E /* TLDestroySessionsRes.h in Headers */,
 				D0249BD61ABF5B470076ECBF /* GDImageCell.h in Headers */,
-				FA267A71203DD32900BA249B /* TapToSpeakView.h in Headers */,
 				D06B21D81E49CFA500EE2F70 /* TLPayments_PaymentCeceipt$payments_paymentReceipt.h in Headers */,
 				68B6398E1BB2506F00205AC3 /* SThreadPoolTask.h in Headers */,
 				D01161B41F41F1340039383E /* TLCdnFileHash.h in Headers */,
@@ -23539,6 +23555,7 @@
 				D0C09C6C1A6E974D008369D7 /* TGSharedMediaController.h in Headers */,
 				D01C7EF71EF95EEA008305F1 /* TGGroupInfoUserCell.h in Headers */,
 				D0381B971CA4750400BF709D /* TLauth_SentCode$auth_sentCode.h in Headers */,
+				FA806D91208CA084006E9CD7 /* V2VTableDatasource.h in Headers */,
 				68F7D3B91CADF1CC00265D0A /* TGPreviewPhotoItemView.h in Headers */,
 				68D167CE1DB648D100509032 /* TGCallButtonsView.h in Headers */,
 				D06BE8481B8E0C4400F394CF /* TLUpdates$updateShortSentMessage.h in Headers */,
@@ -23559,6 +23576,7 @@
 				D011619E1F41F1330039383E /* TLauth_ExportedAuthorization.h in Headers */,
 				D0115FE41F41F1310039383E /* TLRPCmessages_deleteChatUser.h in Headers */,
 				D0115FE01F41F1310039383E /* TLRPCmessages_createChat.h in Headers */,
+				FA806D8A208C8B92006E9CD7 /* SpeechSynthesizer.h in Headers */,
 				D0A4D7EF1C10E0FB00537E74 /* TGExternalGifSearchResultGalleryItem.h in Headers */,
 				D011611E1F41F1330039383E /* NSArray_ContactLocated.h in Headers */,
 				D0115EC41F41F12F0039383E /* TLphone_DhConfig.h in Headers */,
@@ -23790,6 +23808,7 @@
 				68B6396B1BB2506F00205AC3 /* SQueue.h in Headers */,
 				D01160341F41F1310039383E /* TLRPCmessages_importChatInvite.h in Headers */,
 				D06BEC851F62FB330035A545 /* TLRPCmessages_readMentions.h in Headers */,
+				FA806D8D208C8B92006E9CD7 /* SpeechRecognizer.h in Headers */,
 				D0249B9A1ABF5B470076ECBF /* GDAbstractMetadataCache.h in Headers */,
 				D0115E8C1F41F12F0039383E /* TLmessages_StickerSet.h in Headers */,
 				D0115EE61F41F12F0039383E /* TLProtoMessageCopy.h in Headers */,
@@ -25413,7 +25432,6 @@
 				D0590D9119A78C9D0082FFC8 /* ModernMessageBroadcastIconWhite@2x.png in Resources */,
 				9315E4E5186AFE7A008DD74D /* Icon-Small@2x.png in Resources */,
 				09361CC91E725DCF007ED29C /* ModernBubbleIncomingFullHighlightedPad@3x.png in Resources */,
-				FA267B89203E1F3400BA249B /* microphone@2x.png in Resources */,
 				D025669E1AD2B8E3007C19C1 /* InlineMediaInstagramVideoIcon@3x.png in Resources */,
 				936219D9186460F600C52870 /* 110.m4a in Resources */,
 				930AD09E173C120D003DABCE /* MapCalloutCenter_Highlighted@2x.png in Resources */,
@@ -26147,6 +26165,7 @@
 				D02D989F1DC8EB04009E9465 /* TGItemCollectionGalleryVideoBaseItemView.m in Sources */,
 				D0E1D3021EC9E87D00FCEEF1 /* TGIconSwitchView.m in Sources */,
 				D0983D3E19CB9A4300CE5BB0 /* TGAudioInfo.m in Sources */,
+				FA806D8C208C8B92006E9CD7 /* SpeechSynthesizer.m in Sources */,
 				D0C09C851A6E974D008369D7 /* TGSharedMediaSectionHeader.m in Sources */,
 				D0EA68C31A0077A800D1F747 /* TGBingSearchActor.m in Sources */,
 				D0115EA11F41F12F0039383E /* TLMsgsStateReq.mm in Sources */,
@@ -26453,6 +26472,7 @@
 				D011614F1F41F1330039383E /* NSArray_KeyboardButtonRow.mm in Sources */,
 				09F3431B1F9F504D00216F26 /* TGGenericPeerGalleryGroupItem.m in Sources */,
 				D0115FE31F41F1310039383E /* TLRPCmessages_deactivateChat.mm in Sources */,
+				FA806D8B208C8B92006E9CD7 /* SpeechRecognizer.m in Sources */,
 				D0115F0B1F41F12F0039383E /* TLRPCaccount_getWallPapers.mm in Sources */,
 				D01161831F41F1330039383E /* NSArray_TopPeerCategoryPeers.mm in Sources */,
 				D098418C19CB9BE200CE5BB0 /* TLMetaClassStore.mm in Sources */,
@@ -26747,6 +26767,7 @@
 				933AA49818608267000AA848 /* TGDocumentDownloadActor.m in Sources */,
 				68B63C291BB258E300205AC3 /* TGBridgeBotReplyMarkup.m in Sources */,
 				D0115E731F41F12F0039383E /* TLmessages_Dialogs.mm in Sources */,
+				FA806D92208CA084006E9CD7 /* V2VTableDatasource.m in Sources */,
 				93CF3B54181DCB78003D8DE1 /* TGModernTextViewModel.mm in Sources */,
 				D01161F31F41F1340039383E /* TLcontacts_ImportedContacts.mm in Sources */,
 				D0115FB51F41F1300039383E /* TLRPCgeo_saveGeoPlace.mm in Sources */,
@@ -27605,7 +27626,6 @@
 				D01160211F41F1310039383E /* TLRPCmessages_getPinnedDialogs.mm in Sources */,
 				D0177B7F1F2683BF0044446D /* (null) in Sources */,
 				D0FC35391B3CF0460041A938 /* TGMusicPlayerItemSignals.m in Sources */,
-				FA267A72203DD32900BA249B /* TapToSpeakView.m in Sources */,
 				D0115F271F41F1300039383E /* TLRPCauth_cancelCode.mm in Sources */,
 				D008C1FA1C18E088007D2855 /* TGBotContextResults.m in Sources */,
 				D011607F1F41F1320039383E /* TLRPCphone_declineCall.mm in Sources */,
@@ -28449,7 +28469,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "";
@@ -28483,7 +28503,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "";
@@ -28517,7 +28537,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "";
@@ -28552,7 +28572,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "";
@@ -28811,7 +28831,7 @@
 					submodules/libtgvoip,
 				);
 				INFOPLIST_FILE = "Telegraph/Telegraph-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -28881,7 +28901,7 @@
 					thirdparty/pop,
 				);
 				INFOPLIST_FILE = Share/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -29031,7 +29051,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = LegacyDatabase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_CFLAGS = (
@@ -29153,7 +29173,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = LegacyDatabase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_CFLAGS = (
@@ -29208,7 +29228,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = LegacyDatabase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = (
@@ -29268,7 +29288,7 @@
 					thirdparty/pop,
 				);
 				INFOPLIST_FILE = Share/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -29314,7 +29334,7 @@
 					thirdparty/pop,
 				);
 				INFOPLIST_FILE = Share/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
@@ -29425,7 +29445,7 @@
 					submodules/libtgvoip,
 				);
 				INFOPLIST_FILE = "Telegraph/Telegraph-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -29492,7 +29512,7 @@
 					thirdparty/pop,
 				);
 				INFOPLIST_FILE = Share/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
@@ -29645,7 +29665,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = LegacyDatabase/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = (
@@ -29817,7 +29837,7 @@
 					submodules/libtgvoip,
 				);
 				INFOPLIST_FILE = "Telegraph/Telegraph-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -29906,7 +29926,7 @@
 					submodules/libtgvoip,
 				);
 				INFOPLIST_FILE = "Telegraph/Telegraph-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
