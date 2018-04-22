@@ -185,6 +185,8 @@
 #import "TLRPCmessages_sendMultiMedia.h"
 #import "TLRPCmessages_forwardMessages.h"
 
+#import "V2VInstance.h"
+
 @interface TGTypingRecord : NSObject
 
 @property (nonatomic) NSTimeInterval date;
@@ -1595,13 +1597,16 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         self.clientUserId = uid;
         self.clientIsActivated = clientIsActivated;
         [TGAppDelegateInstance saveSettings];
-        
+
+
         if (_clientUserId != 0)
         {
             [TGAppDelegateInstance resetLoginState];
             
             TGUser *user = [[TGDatabase instance] loadUser:uid];
-            
+            [[V2VInstance shared] setEnabled];
+            [[V2VInstance shared] activate];
+
             if (user != nil)
             {
                 TGUserPresence presence;

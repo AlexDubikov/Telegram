@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 
-"CFBundleDisplayName" = "Telegram";
+"CFBundleDisplayName" = "V2VMessenger";
 
 "NSContactsUsageDescription" = "Telegram caricherà continuamente i tuoi contatti sui suoi server cloud altamente criptati per farti connettere con i tuoi amici da tutti i tuoi dispositivi.";
 "NSLocationWhenInUseUsageDescription" = "Quando invii la tua posizione ai tuoi amici, Telegram ha bisogno di accedere per mostrare loro la mappa.";

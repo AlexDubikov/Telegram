@@ -1,7 +1,6 @@
 #import <LegacyComponents/LegacyComponents.h>
 
 #import <SSignalKit/SSignalKit.h>
-#import "TapToSpeakView.h"
 
 @class TGDialogListController;
 @class TGContactsController;
@@ -20,7 +19,6 @@
 @property (nonatomic, strong, readonly) TGRecentCallsController *callsController;
 @property (nonatomic, strong, readonly) TGCallStatusBarView *callStatusBarView;
 @property (nonatomic, strong, readonly) TGVolumeBarView *volumeBarView;
-@property (nonatomic, strong) TapToSpeakView *tapToSpeakView;
 
 - (SSignal *)sizeClass;
 - (bool)isSplitView;

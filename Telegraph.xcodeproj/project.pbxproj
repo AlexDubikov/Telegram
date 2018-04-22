@@ -4811,6 +4811,10 @@
 		FA7E25B1203D9EC70081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B2203D9F550081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B3203D9F550081FDC0 /* MySpinServerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA9DBC822088E857006A090A /* V2VInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9DBC802088E857006A090A /* V2VInstance.h */; };
+		FA9DBC832088E857006A090A /* V2VInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9DBC812088E857006A090A /* V2VInstance.m */; };
+		FAA6189C2086A7440049A384 /* V2VController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA6189A2086A7440049A384 /* V2VController.h */; };
+		FAA6189D2086A7440049A384 /* V2VController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA6189B2086A7440049A384 /* V2VController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -11554,6 +11558,10 @@
 		FA267B88203E1F3400BA249B /* microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone@2x.png"; sourceTree = "<group>"; };
 		FA267B8A203E25E400BA249B /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySpinServerSDK.framework; sourceTree = "<group>"; };
+		FA9DBC802088E857006A090A /* V2VInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VInstance.h; sourceTree = "<group>"; };
+		FA9DBC812088E857006A090A /* V2VInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VInstance.m; sourceTree = "<group>"; };
+		FAA6189A2086A7440049A384 /* V2VController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VController.h; sourceTree = "<group>"; };
+		FAA6189B2086A7440049A384 /* V2VController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -22780,6 +22788,10 @@
 				FA267B88203E1F3400BA249B /* microphone@2x.png */,
 				FA267A6F203DD32900BA249B /* TapToSpeakView.h */,
 				FA267A70203DD32900BA249B /* TapToSpeakView.m */,
+				FAA6189A2086A7440049A384 /* V2VController.h */,
+				FAA6189B2086A7440049A384 /* V2VController.m */,
+				FA9DBC802088E857006A090A /* V2VInstance.h */,
+				FA9DBC812088E857006A090A /* V2VInstance.m */,
 			);
 			name = Recognition;
 			sourceTree = "<group>";
@@ -22979,6 +22991,7 @@
 				684853CD1C17F6A600007D21 /* TGVersionCollectionItem.h in Headers */,
 				D011601C1F41F1310039383E /* TLRPCmessages_getPeerDialogs.h in Headers */,
 				D0249BAB1ABF5B470076ECBF /* GDDispatchUtilities.h in Headers */,
+				FA9DBC822088E857006A090A /* V2VInstance.h in Headers */,
 				D01F94E31E5E3DB5002627A1 /* STPImageLibrary+Private.h in Headers */,
 				D01162721F41F1350039383E /* TLInputPeerNotifySettings.h in Headers */,
 				D01161001F41F1320039383E /* TLUserStatus.h in Headers */,
@@ -23347,6 +23360,7 @@
 				68B639671BB2506F00205AC3 /* SMetaDisposable.h in Headers */,
 				D0630B681CC7F8AE00FC9AA4 /* TGInlineBotsInputPanel.h in Headers */,
 				D0115E961F41F12F0039383E /* TLMsgDetailedInfo.h in Headers */,
+				FAA6189C2086A7440049A384 /* V2VController.h in Headers */,
 				D0115F5A1F41F1300039383E /* TLRPCchannels_getAdminedPublicChannels.h in Headers */,
 				D01160681F41F1310039383E /* TLRPCmessages_startBot.h in Headers */,
 				D0115F0A1F41F12F0039383E /* TLRPCaccount_getWallPapers.h in Headers */,
@@ -26343,6 +26357,7 @@
 				D0D17EDD1CAEB13A00C4750B /* TGBotContextResultSendMessageGeo.m in Sources */,
 				D0983D9819CB9A4300CE5BB0 /* TGRemoveContactFutureAction.m in Sources */,
 				D0115FF51F41F1310039383E /* TLRPCmessages_faveSticker.mm in Sources */,
+				FAA6189D2086A7440049A384 /* V2VController.m in Sources */,
 				D09C752419F1D1C400BF51BC /* TGApplyUsernameActor.m in Sources */,
 				D0DCF4FF1AE923FA00D5B7A1 /* TGGroupManagementSignals.m in Sources */,
 				D03E44CB1AB07EFD00E72CAA /* TGReplyHeaderLocationModel.m in Sources */,
@@ -27507,6 +27522,7 @@
 				D0CBA9321DDDF8520009D717 /* TLUpdate$updateServiceNotification.mm in Sources */,
 				D0115F711F41F1300039383E /* TLRPCchannels_readMessageContents.mm in Sources */,
 				D01161D91F41F1340039383E /* TLChatParticipants.mm in Sources */,
+				FA9DBC832088E857006A090A /* V2VInstance.m in Sources */,
 				D00859541B1F94B500EAF753 /* TGModernConversationCommandsAssociatedPanel.m in Sources */,
 				93DA95B5171D95FC00A69D64 /* TGReportDeliveryActor.m in Sources */,
 				D01160A11F41F1320039383E /* TLRPCphotos_uploadProfilePhoto.mm in Sources */,
