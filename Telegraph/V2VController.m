@@ -32,7 +32,7 @@ static const CGFloat tapToSpeakButtonSize = 50;
 }
 
 - (void)configureDataSource {
-
+    _dataSource = [V2VTableDatasource new];
 }
 
 - (UIView*)makeNavigationBar {
@@ -43,12 +43,12 @@ static const CGFloat tapToSpeakButtonSize = 50;
 }
 
 - (UITableView*)makeTable {
-    UITableView* view = [[UITableView alloc] initWithFrame:CGRectMake(0, topBarHeight, self.view.frame.size.width, self.view.frame.size.height - topBarHeight)];
-    view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    view.backgroundColor = [UIColor redColor];
-    view.dataSource = _dataSource;
-    view.delegate = _dataSource;
-    return view;
+    UITableView* table = [[UITableView alloc] initWithFrame:CGRectMake(0, topBarHeight, self.view.frame.size.width, self.view.frame.size.height - topBarHeight)];
+    table.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    table.backgroundColor = [UIColor redColor];
+    table.dataSource = _dataSource;
+    table.delegate = _dataSource;
+    return table;
 }
 
 - (UIButton*)makeTapToSpeakButton {
@@ -77,6 +77,8 @@ static const CGFloat tapToSpeakButtonSize = 50;
 }
 
 -(void)configure {
+    [self configureDataSource];
+
     self.navBar = [self makeNavigationBar];
     self.table = [self makeTable];
     self.tapToSpeakButton = [self makeTapToSpeakButton];

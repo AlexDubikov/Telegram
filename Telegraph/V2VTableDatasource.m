@@ -8,6 +8,7 @@
 #import "V2VTableDatasource.h"
 
 @interface V2VTableDatasource ()
+@property (nonatomic, strong) NSMutableArray * messages;
 
 @end
 
@@ -18,7 +19,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return _messages.count;
 }
 
 @end

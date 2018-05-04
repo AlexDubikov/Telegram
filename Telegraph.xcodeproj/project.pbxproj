@@ -4814,6 +4814,8 @@
 		FA806D8D208C8B92006E9CD7 /* SpeechRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D89208C8B92006E9CD7 /* SpeechRecognizer.h */; };
 		FA806D91208CA084006E9CD7 /* V2VTableDatasource.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */; };
 		FA806D92208CA084006E9CD7 /* V2VTableDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */; };
+		FA806D95208CAD2A006E9CD7 /* V2VDialogCell.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D93208CAD2A006E9CD7 /* V2VDialogCell.h */; };
+		FA806D96208CAD2A006E9CD7 /* V2VDialogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA806D94208CAD2A006E9CD7 /* V2VDialogCell.m */; };
 		FA9DBC822088E857006A090A /* V2VInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9DBC802088E857006A090A /* V2VInstance.h */; };
 		FA9DBC832088E857006A090A /* V2VInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9DBC812088E857006A090A /* V2VInstance.m */; };
 		FAA6189C2086A7440049A384 /* V2VController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA6189A2086A7440049A384 /* V2VController.h */; };
@@ -11564,6 +11566,8 @@
 		FA806D89208C8B92006E9CD7 /* SpeechRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechRecognizer.h; sourceTree = "<group>"; };
 		FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VTableDatasource.h; sourceTree = "<group>"; };
 		FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VTableDatasource.m; sourceTree = "<group>"; };
+		FA806D93208CAD2A006E9CD7 /* V2VDialogCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VDialogCell.h; sourceTree = "<group>"; };
+		FA806D94208CAD2A006E9CD7 /* V2VDialogCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VDialogCell.m; sourceTree = "<group>"; };
 		FA9DBC802088E857006A090A /* V2VInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VInstance.h; sourceTree = "<group>"; };
 		FA9DBC812088E857006A090A /* V2VInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VInstance.m; sourceTree = "<group>"; };
 		FAA6189A2086A7440049A384 /* V2VController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VController.h; sourceTree = "<group>"; };
@@ -22798,6 +22802,8 @@
 				FA9DBC812088E857006A090A /* V2VInstance.m */,
 				FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */,
 				FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */,
+				FA806D93208CAD2A006E9CD7 /* V2VDialogCell.h */,
+				FA806D94208CAD2A006E9CD7 /* V2VDialogCell.m */,
 			);
 			name = V2V;
 			sourceTree = "<group>";
@@ -23266,6 +23272,7 @@
 				D0115F021F41F12F0039383E /* TLRPCaccount_getPassword.h in Headers */,
 				D010C2D11EA8A7F500F41B96 /* TGCdnData.h in Headers */,
 				68B63D801BB25B8D00205AC3 /* TGPeerNotificationSettingsSignals.h in Headers */,
+				FA806D95208CAD2A006E9CD7 /* V2VDialogCell.h in Headers */,
 				D02D989A1DC8E6AA009E9465 /* TGItemCollectionGalleryVideoItemView.h in Headers */,
 				D01F94BC1E5E3DB4002627A1 /* STPAspects.h in Headers */,
 				D013FAB01CDCBBC800EF175C /* TGConversationScrollButton.h in Headers */,
@@ -26004,6 +26011,7 @@
 				68B63D551BB25B5200205AC3 /* TGBridgeServer.m in Sources */,
 				D01F95151E5E3DB5002627A1 /* StripeError.m in Sources */,
 				D011610D1F41F1320039383E /* NSArray_BotInfo.mm in Sources */,
+				FA806D96208CAD2A006E9CD7 /* V2VDialogCell.m in Sources */,
 				D02478D31E4CFA4B0083C3F3 /* TGAnimationUtils.m in Sources */,
 				D052F0E91576E35700D51E59 /* TGInterfaceManager.mm in Sources */,
 				D052F11B1576F42400D51E59 /* TGPushActionsRequestBuilder.m in Sources */,
