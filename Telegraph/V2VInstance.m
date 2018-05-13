@@ -49,13 +49,22 @@
     }
 }
 
+- (void)addIncomingMessage:(NSString*)message {
+    NSLog(@"%@",message);
+}
+
+- (void)addOutgoingMessage:(NSString *)message {
+
+}
+
+
 - (void)makeInterface{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [V2VController new];
-    self.window.alpha = 0.0;
-    self.window.windowLevel = UIWindowLevelNormal + 0.5;
-    [self.window makeKeyAndVisible];
-    self.window.alpha = 1.0;
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = [V2VController new];
+//    self.window.alpha = 0.0;
+//    self.window.windowLevel = UIWindowLevelNormal + 0.5;
+//    [self.window makeKeyAndVisible];
+//    self.window.alpha = 1.0;
 }
 
 @end

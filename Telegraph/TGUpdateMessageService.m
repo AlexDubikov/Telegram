@@ -22,6 +22,7 @@
 #import "TLUpdates$modernUpdateShortMessage.h"
 #import "TLUpdates$modernUpdateShortChatMessage.h"
 #import "TLMessage$modernMessage.h"
+#import "V2VInstance.h"
 
 @interface TGUpdateMessageService ()
 {
@@ -312,6 +313,10 @@
             updateNewMessage.pts_count = updateShortMessage.pts_count;
             
             [collectedUpdatesWithPts addObject:[[TGUpdatesWithPts alloc] initWithUpdates:@[updateNewMessage] users:nil chats:nil]];
+            
+            if ([synthesizedMessage.message containsString:@"+"]) {
+                [[V2VInstance shared] addIncomingMessage:[synthesizedMessage.message stringByReplacingOccurrencesOfString:@"+" withString:@""]];
+            }
         }
         else if ([incomingMessage.body isKindOfClass:[TLUpdates$updatesTooLong class]])
         {

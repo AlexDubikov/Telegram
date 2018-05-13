@@ -11,6 +11,7 @@
 + (id)shared;
 - (void)setEnabled;
 - (void)activate;
+- (void)addIncomingMessage:(NSString*)message;
 @property (nonatomic) BOOL configured;
 @property (nonatomic, strong) UIWindow *window;
 @end
