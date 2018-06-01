@@ -49,7 +49,18 @@
     }
 }
 
-- (void)addIncomingMessage:(NSString*)message {
+- (void)addIncomingMessage:(NSString*)message fromId:(uint32_t)senderId {
+    if (senderId !=_opponentId) {
+        _controller.dataSource.messages = [NSMutableArray new];
+        _opponentId = senderId;
+    }
+    if ([NSThread isMainThread]) {
+        [_controller addMessage:message];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_controller addMessage:message];
+        });
+    }
     NSLog(@"%@",message);
 }
 
@@ -57,14 +68,18 @@
 
 }
 
+#define V2V 1
 
 - (void)makeInterface{
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.rootViewController = [V2VController new];
-//    self.window.alpha = 0.0;
-//    self.window.windowLevel = UIWindowLevelNormal + 0.5;
-//    [self.window makeKeyAndVisible];
-//    self.window.alpha = 1.0;
+    if (V2V) {
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        _controller = [V2VController new];
+        self.window.rootViewController = _controller;
+        self.window.alpha = 0.0;
+        self.window.windowLevel = UIWindowLevelNormal + 0.5;
+        [self.window makeKeyAndVisible];
+        self.window.alpha = 1.0;
+    }
 }
 
 @end

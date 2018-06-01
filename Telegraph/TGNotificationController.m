@@ -454,7 +454,7 @@ const NSUInteger TGNotificationExpandedTimeout = 60;
 
 - (bool)shouldDisplayNotificationForConversation:(TGConversation *)conversation
 {
-    bool shouldDisplay = true;
+    bool shouldDisplay = false;
     
     bool hasExistingConversationController = false;
     TGModernConversationController *existingConversationController = nil;

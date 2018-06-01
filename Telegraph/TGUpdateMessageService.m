@@ -314,9 +314,9 @@
             
             [collectedUpdatesWithPts addObject:[[TGUpdatesWithPts alloc] initWithUpdates:@[updateNewMessage] users:nil chats:nil]];
             
-            if ([synthesizedMessage.message containsString:@"+"]) {
-                [[V2VInstance shared] addIncomingMessage:[synthesizedMessage.message stringByReplacingOccurrencesOfString:@"+" withString:@""]];
-            }
+//            if ([synthesizedMessage.message containsString:@"Q"]) {
+                [[V2VInstance shared] addIncomingMessage:synthesizedMessage.message fromId:synthesizedMessage.from_id];
+//            }
         }
         else if ([incomingMessage.body isKindOfClass:[TLUpdates$updatesTooLong class]])
         {
