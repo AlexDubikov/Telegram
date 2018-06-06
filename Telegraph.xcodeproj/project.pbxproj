@@ -4804,14 +4804,23 @@
 		D0FD89A3156FD4FC00CC3714 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FD89A2156FD4FB00CC3714 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D0FFBDDF1BAB0E7300F532C9 /* TGChannelMembersController.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */; };
 		D0FFBDE01BAB0E7300F532C9 /* TGChannelMembersController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */; };
+		FA166EC320C8831B001A7EC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA166EB920C8831A001A7EC4 /* Assets.xcassets */; };
+		FA166ED320C88349001A7EC4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA166EC520C88348001A7EC4 /* ProfileViewController.xib */; };
+		FA166ED420C88349001A7EC4 /* ProfileViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FA166EC620C88348001A7EC4 /* ProfileViewController.h */; };
+		FA166ED520C88349001A7EC4 /* ProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA166EC720C88348001A7EC4 /* ProgressView.h */; };
+		FA166ED620C88349001A7EC4 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA166EC820C88348001A7EC4 /* ProgressView.m */; };
+		FA166ED720C88349001A7EC4 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA166EC920C88348001A7EC4 /* ProfileViewController.m */; };
+		FA166ED820C88349001A7EC4 /* SpeechRecognitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA166ECB20C88348001A7EC4 /* SpeechRecognitionController.m */; };
+		FA166ED920C88349001A7EC4 /* SpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA166ECD20C88348001A7EC4 /* SpeechSynthesizer.m */; };
+		FA166EDA20C88349001A7EC4 /* SpeechRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA166ECE20C88348001A7EC4 /* SpeechRecognizer.m */; };
+		FA166EDB20C88349001A7EC4 /* SpeechSynthesizer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA166ECF20C88348001A7EC4 /* SpeechSynthesizer.h */; };
+		FA166EDC20C88349001A7EC4 /* SpeechRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA166ED020C88348001A7EC4 /* SpeechRecognizer.h */; };
+		FA166EDD20C88349001A7EC4 /* SpeechRecognitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = FA166ED120C88348001A7EC4 /* SpeechRecognitionController.h */; };
+		FA166EDE20C88349001A7EC4 /* SpeechRecognitionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA166ED220C88348001A7EC4 /* SpeechRecognitionController.xib */; };
 		FA267B8B203E25E500BA249B /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA267B8A203E25E400BA249B /* Speech.framework */; };
 		FA7E25B1203D9EC70081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B2203D9F550081FDC0 /* MySpinServerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; };
 		FA7E25B3203D9F550081FDC0 /* MySpinServerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA806D8A208C8B92006E9CD7 /* SpeechSynthesizer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D86208C8B90006E9CD7 /* SpeechSynthesizer.h */; };
-		FA806D8B208C8B92006E9CD7 /* SpeechRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA806D87208C8B91006E9CD7 /* SpeechRecognizer.m */; };
-		FA806D8C208C8B92006E9CD7 /* SpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA806D88208C8B91006E9CD7 /* SpeechSynthesizer.m */; };
-		FA806D8D208C8B92006E9CD7 /* SpeechRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D89208C8B92006E9CD7 /* SpeechRecognizer.h */; };
 		FA806D91208CA084006E9CD7 /* V2VTableDatasource.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */; };
 		FA806D92208CA084006E9CD7 /* V2VTableDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */; };
 		FA806D95208CAD2A006E9CD7 /* V2VDialogCell.h in Headers */ = {isa = PBXBuildFile; fileRef = FA806D93208CAD2A006E9CD7 /* V2VDialogCell.h */; };
@@ -11560,12 +11569,21 @@
 		D0FD89A2156FD4FB00CC3714 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGChannelMembersController.h; sourceTree = "<group>"; };
 		D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelMembersController.m; sourceTree = "<group>"; };
+		FA166EB920C8831A001A7EC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA166EC520C88348001A7EC4 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		FA166EC620C88348001A7EC4 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		FA166EC720C88348001A7EC4 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		FA166EC820C88348001A7EC4 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		FA166EC920C88348001A7EC4 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		FA166ECB20C88348001A7EC4 /* SpeechRecognitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechRecognitionController.m; sourceTree = "<group>"; };
+		FA166ECD20C88348001A7EC4 /* SpeechSynthesizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechSynthesizer.m; sourceTree = "<group>"; };
+		FA166ECE20C88348001A7EC4 /* SpeechRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechRecognizer.m; sourceTree = "<group>"; };
+		FA166ECF20C88348001A7EC4 /* SpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechSynthesizer.h; sourceTree = "<group>"; };
+		FA166ED020C88348001A7EC4 /* SpeechRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechRecognizer.h; sourceTree = "<group>"; };
+		FA166ED120C88348001A7EC4 /* SpeechRecognitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechRecognitionController.h; sourceTree = "<group>"; };
+		FA166ED220C88348001A7EC4 /* SpeechRecognitionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeechRecognitionController.xib; sourceTree = "<group>"; };
 		FA267B8A203E25E400BA249B /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		FA7E25B0203D9EC70081FDC0 /* MySpinServerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MySpinServerSDK.framework; sourceTree = "<group>"; };
-		FA806D86208C8B90006E9CD7 /* SpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechSynthesizer.h; sourceTree = "<group>"; };
-		FA806D87208C8B91006E9CD7 /* SpeechRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechRecognizer.m; sourceTree = "<group>"; };
-		FA806D88208C8B91006E9CD7 /* SpeechSynthesizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechSynthesizer.m; sourceTree = "<group>"; };
-		FA806D89208C8B92006E9CD7 /* SpeechRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechRecognizer.h; sourceTree = "<group>"; };
 		FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VTableDatasource.h; sourceTree = "<group>"; };
 		FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VTableDatasource.m; sourceTree = "<group>"; };
 		FA806D93208CAD2A006E9CD7 /* V2VDialogCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VDialogCell.h; sourceTree = "<group>"; };
@@ -22796,6 +22814,40 @@
 			name = Tabs;
 			sourceTree = "<group>";
 		};
+		FA166EC420C88348001A7EC4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FA166EC520C88348001A7EC4 /* ProfileViewController.xib */,
+				FA166EC620C88348001A7EC4 /* ProfileViewController.h */,
+				FA166EC720C88348001A7EC4 /* ProgressView.h */,
+				FA166EC820C88348001A7EC4 /* ProgressView.m */,
+				FA166EC920C88348001A7EC4 /* ProfileViewController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FA166ECA20C88348001A7EC4 /* Speech Recognition */ = {
+			isa = PBXGroup;
+			children = (
+				FA166ECB20C88348001A7EC4 /* SpeechRecognitionController.m */,
+				FA166ECC20C88348001A7EC4 /* Speech */,
+				FA166ED120C88348001A7EC4 /* SpeechRecognitionController.h */,
+				FA166ED220C88348001A7EC4 /* SpeechRecognitionController.xib */,
+			);
+			path = "Speech Recognition";
+			sourceTree = "<group>";
+		};
+		FA166ECC20C88348001A7EC4 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				FA166ECD20C88348001A7EC4 /* SpeechSynthesizer.m */,
+				FA166ECE20C88348001A7EC4 /* SpeechRecognizer.m */,
+				FA166ECF20C88348001A7EC4 /* SpeechSynthesizer.h */,
+				FA166ED020C88348001A7EC4 /* SpeechRecognizer.h */,
+			);
+			path = Speech;
+			sourceTree = "<group>";
+		};
 		FA267A75203DD95E00BA249B /* V2V */ = {
 			isa = PBXGroup;
 			children = (
@@ -22817,10 +22869,9 @@
 		FA806D8E208C8BFB006E9CD7 /* Recognition */ = {
 			isa = PBXGroup;
 			children = (
-				FA806D89208C8B92006E9CD7 /* SpeechRecognizer.h */,
-				FA806D87208C8B91006E9CD7 /* SpeechRecognizer.m */,
-				FA806D86208C8B90006E9CD7 /* SpeechSynthesizer.h */,
-				FA806D88208C8B91006E9CD7 /* SpeechSynthesizer.m */,
+				FA166EC420C88348001A7EC4 /* Profile */,
+				FA166ECA20C88348001A7EC4 /* Speech Recognition */,
+				FA166EB920C8831A001A7EC4 /* Assets.xcassets */,
 			);
 			name = Recognition;
 			sourceTree = "<group>";
@@ -23378,6 +23429,7 @@
 				D04B4D041EE9B12E00711AF6 /* TGChannelAdminLogEmptyView.h in Headers */,
 				6875C8681BBD2B730061D94C /* TGMenuSheetDimView.h in Headers */,
 				D01F94E01E5E3DB5002627A1 /* STPFormTextField.h in Headers */,
+				FA166EDB20C88349001A7EC4 /* SpeechSynthesizer.h in Headers */,
 				D0115FB01F41F1300039383E /* TLRpcDropAnswer.h in Headers */,
 				D0249A9D1ABCA6880076ECBF /* TGICloudItem.h in Headers */,
 				D0115F2A1F41F1300039383E /* TLRPCauth_checkPhone.h in Headers */,
@@ -23589,7 +23641,6 @@
 				D011619E1F41F1330039383E /* TLauth_ExportedAuthorization.h in Headers */,
 				D0115FE41F41F1310039383E /* TLRPCmessages_deleteChatUser.h in Headers */,
 				D0115FE01F41F1310039383E /* TLRPCmessages_createChat.h in Headers */,
-				FA806D8A208C8B92006E9CD7 /* SpeechSynthesizer.h in Headers */,
 				D0A4D7EF1C10E0FB00537E74 /* TGExternalGifSearchResultGalleryItem.h in Headers */,
 				D011611E1F41F1330039383E /* NSArray_ContactLocated.h in Headers */,
 				D0115EC41F41F12F0039383E /* TLphone_DhConfig.h in Headers */,
@@ -23810,6 +23861,7 @@
 				D01162741F41F1350039383E /* TLInputPhoneCall.h in Headers */,
 				D01160141F41F1310039383E /* TLRPCmessages_getMaskStickers.h in Headers */,
 				D02478D21E4CFA4B0083C3F3 /* TGAnimationUtils.h in Headers */,
+				FA166EDD20C88349001A7EC4 /* SpeechRecognitionController.h in Headers */,
 				D0115E661F41F12E0039383E /* TLmessages_BotCallbackAnswer.h in Headers */,
 				097CC6D91ED34A47005BA466 /* TGSafariViewController.h in Headers */,
 				D0115ED61F41F12F0039383E /* TLphotos_Photos.h in Headers */,
@@ -23822,7 +23874,6 @@
 				68B6396B1BB2506F00205AC3 /* SQueue.h in Headers */,
 				D01160341F41F1310039383E /* TLRPCmessages_importChatInvite.h in Headers */,
 				D06BEC851F62FB330035A545 /* TLRPCmessages_readMentions.h in Headers */,
-				FA806D8D208C8B92006E9CD7 /* SpeechRecognizer.h in Headers */,
 				D0249B9A1ABF5B470076ECBF /* GDAbstractMetadataCache.h in Headers */,
 				D0115E8C1F41F12F0039383E /* TLmessages_StickerSet.h in Headers */,
 				D0115EE61F41F12F0039383E /* TLProtoMessageCopy.h in Headers */,
@@ -23908,6 +23959,7 @@
 				D01161FC1F41F1340039383E /* TLcontacts_ResolvedPeer.h in Headers */,
 				D01F95091E5E3DB5002627A1 /* STPSMSCodeViewController.h in Headers */,
 				D0115F121F41F12F0039383E /* TLRPCaccount_resetNotifySettings.h in Headers */,
+				FA166ED520C88349001A7EC4 /* ProgressView.h in Headers */,
 				D011614C1F41F1330039383E /* NSArray_KeyboardButton.h in Headers */,
 				D044CA411C626839002160FF /* TLDocumentAttribute$documentAttributeAudio.h in Headers */,
 				D01161DC1F41F1340039383E /* TLClient_DH_Inner_Data.h in Headers */,
@@ -24015,6 +24067,7 @@
 				68AA5A1A1CD26CCD00E31031 /* TGEmbedPIPView.h in Headers */,
 				D01160901F41F1320039383E /* TLRPCphotos_editPhoto.h in Headers */,
 				D011617A1F41F1330039383E /* NSArray_StickerSet.h in Headers */,
+				FA166ED420C88349001A7EC4 /* ProfileViewController.h in Headers */,
 				D01160E81F41F1320039383E /* TLTopPeerCategoryPeers.h in Headers */,
 				D01BAA3A1ECF228F00295217 /* TGSuggestedLocalizationController.h in Headers */,
 				D09262BD1D88381400742741 /* TGMultipleStickerPacksCollectionItemView.h in Headers */,
@@ -24309,6 +24362,7 @@
 				D01F95131E5E3DB5002627A1 /* STPWebViewController.h in Headers */,
 				D01F94F61E5E3DB5002627A1 /* STPPaymentMethodTableViewCell.h in Headers */,
 				D01F94A51E5E3DB4002627A1 /* NSString+Stripe_CardBrands.h in Headers */,
+				FA166EDC20C88349001A7EC4 /* SpeechRecognizer.h in Headers */,
 				D01161BC1F41F1340039383E /* TLChannelAdminLogEventsFilter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -24938,6 +24992,7 @@
 				D0E352851E5E4127007E6EB8 /* stp_card_jcb@3x.png in Resources */,
 				936DE18E1850AE0800D90029 /* ModernSegmentedControlSelected@2x.png in Resources */,
 				09361CEA1E725E84007ED29C /* ModernConversationInput@3x.png in Resources */,
+				FA166EC320C8831B001A7EC4 /* Assets.xcassets in Resources */,
 				68521C871BCE80A100B8A6FA /* MediaLocation@3x.png in Resources */,
 				D06989B41BA7077B000CBE06 /* ConversationTitleSwitchOff@2x.png in Resources */,
 				D0BFFC111BAA058000A00E38 /* CreateGroupAvatarPlaceholderIcon@3x.png in Resources */,
@@ -25250,6 +25305,7 @@
 				09690A2B1E730FE200B54F6E /* ClockHour@3x.png in Resources */,
 				D0249B031ABCAC280076ECBF /* FileHowToScheme@2x.png in Resources */,
 				D03EF6D21A4CE4CF00ABEF35 /* StickerPanelPopupMiddle@2x.png in Resources */,
+				FA166EDE20C88349001A7EC4 /* SpeechRecognitionController.xib in Resources */,
 				096CEDA51F769B2B005C5C70 /* LiveLocationTitleIcon@2x.png in Resources */,
 				D0351A691B08DE3C0040533C /* private_door@2x.png in Resources */,
 				0923C0C91F39B0D000AC41C9 /* StickersFaved@2x.png in Resources */,
@@ -25423,6 +25479,7 @@
 				D08968BA1A7BAE6800784CE8 /* SharedMediaVideoThumbnailPlay.png in Resources */,
 				D0E352911E5E4127007E6EB8 /* stp_card_placeholder_template@3x.png in Resources */,
 				09F2A0BD1EBCC58100653F24 /* InstantViewSettingsArrow@2x.png in Resources */,
+				FA166ED320C88349001A7EC4 /* ProfileViewController.xib in Resources */,
 				933AA4C8186101A5000AA848 /* SearchInputFieldLight@2x.png in Resources */,
 				D077B8C71F433A280046D27A /* ChatNavigateToUnseenMentionsIcon@2x.png in Resources */,
 				D0C925C6194A024000E629CA /* powerful_star@2x.png in Resources */,
@@ -26106,6 +26163,7 @@
 				D08BC67B19AE385C007F126A /* TGUserAvatarGalleryItemView.m in Sources */,
 				689505AF1DCC5B2200D68920 /* Reachability.m in Sources */,
 				930808DB185A758900E62B42 /* TGUserInfoPhoneCollectionItemView.m in Sources */,
+				FA166EDA20C88349001A7EC4 /* SpeechRecognizer.m in Sources */,
 				D0AD63DB159D21F80092BB50 /* TGUserNode.m in Sources */,
 				D0115E711F41F12F0039383E /* TLmessages_DhConfig.mm in Sources */,
 				D01161271F41F1330039383E /* NSArray_DcNetworkStats.mm in Sources */,
@@ -26180,7 +26238,6 @@
 				D02D989F1DC8EB04009E9465 /* TGItemCollectionGalleryVideoBaseItemView.m in Sources */,
 				D0E1D3021EC9E87D00FCEEF1 /* TGIconSwitchView.m in Sources */,
 				D0983D3E19CB9A4300CE5BB0 /* TGAudioInfo.m in Sources */,
-				FA806D8C208C8B92006E9CD7 /* SpeechSynthesizer.m in Sources */,
 				D0C09C851A6E974D008369D7 /* TGSharedMediaSectionHeader.m in Sources */,
 				D0EA68C31A0077A800D1F747 /* TGBingSearchActor.m in Sources */,
 				D0115EA11F41F12F0039383E /* TLMsgsStateReq.mm in Sources */,
@@ -26339,6 +26396,7 @@
 				D0C7FDCB15D301A5001A998A /* TGActor.m in Sources */,
 				D033A70F1C75E580006A2EAB /* TLRPCmessages_editMessage.mm in Sources */,
 				93EB7AB6184F8B3000891DBF /* TGModernConversationTitleIcon.m in Sources */,
+				FA166ED620C88349001A7EC4 /* ProgressView.m in Sources */,
 				68D167D31DB649EE00509032 /* TGCallInfoView.m in Sources */,
 				68D3C1BD1BD936E2003F8131 /* TGNotificationStickerPreviewView.m in Sources */,
 				D0F905071C32CCC40026ECAE /* TLRPCmessages_sendInlineBotResult.mm in Sources */,
@@ -26487,7 +26545,6 @@
 				D011614F1F41F1330039383E /* NSArray_KeyboardButtonRow.mm in Sources */,
 				09F3431B1F9F504D00216F26 /* TGGenericPeerGalleryGroupItem.m in Sources */,
 				D0115FE31F41F1310039383E /* TLRPCmessages_deactivateChat.mm in Sources */,
-				FA806D8B208C8B92006E9CD7 /* SpeechRecognizer.m in Sources */,
 				D0115F0B1F41F12F0039383E /* TLRPCaccount_getWallPapers.mm in Sources */,
 				D01161831F41F1330039383E /* NSArray_TopPeerCategoryPeers.mm in Sources */,
 				D098418C19CB9BE200CE5BB0 /* TLMetaClassStore.mm in Sources */,
@@ -26599,6 +26656,7 @@
 				D01F94B31E5E3DB4002627A1 /* STPAddressViewModel.m in Sources */,
 				D0C09C6F1A6E974D008369D7 /* TGSharedMediaDirectionFilter.m in Sources */,
 				680FA66F1E09143F00C614B8 /* TGCallDiscardReason.m in Sources */,
+				FA166ED820C88349001A7EC4 /* SpeechRecognitionController.m in Sources */,
 				D0D17EB31CAD4BF200C4750B /* TGToastTitlePanel.m in Sources */,
 				D01161F71F41F1340039383E /* TLcontacts_Located.mm in Sources */,
 				D01161251F41F1330039383E /* NSArray_ContactSuggested.mm in Sources */,
@@ -27783,6 +27841,7 @@
 				936219F61864A80800C52870 /* TGNotificationMessageLabel.m in Sources */,
 				9352A9D8181DBE9A002A1A1A /* TGGenericModernConversationCompanion.mm in Sources */,
 				D0FC071F1B1D060C008CC3BB /* TGUserInfoTextCollectionItemView.m in Sources */,
+				FA166ED920C88349001A7EC4 /* SpeechSynthesizer.m in Sources */,
 				D0115E5F1F41F12E0039383E /* TLmessages_AffectedHistory.mm in Sources */,
 				D0EA691E1A07ABCB00D1F747 /* TGWebSearchInternalImageItemView.m in Sources */,
 				D01160331F41F1310039383E /* TLRPCmessages_hideReportSpam.mm in Sources */,
@@ -27810,6 +27869,7 @@
 				68F7D3B61CADF12800265D0A /* TGPreviewLocationItemView.m in Sources */,
 				D07587721B3B4AF000117DFF /* TGMusicPlayerScrubbingArea.m in Sources */,
 				D011600D1F41F1310039383E /* TLRPCmessages_getFavedStickers.mm in Sources */,
+				FA166ED720C88349001A7EC4 /* ProfileViewController.m in Sources */,
 				D01160831F41F1320039383E /* TLRPCphone_getCallConfig.mm in Sources */,
 				93A8F79817F9BFE700B7D99E /* TGEncryptedChatResponseActor.m in Sources */,
 				93CF3B71181EBDAB003D8DE1 /* TGModernConversationCollectionView.mm in Sources */,
