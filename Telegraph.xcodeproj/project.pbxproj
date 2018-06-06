@@ -4820,6 +4820,8 @@
 		FA9DBC832088E857006A090A /* V2VInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9DBC812088E857006A090A /* V2VInstance.m */; };
 		FAA6189C2086A7440049A384 /* V2VController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA6189A2086A7440049A384 /* V2VController.h */; };
 		FAA6189D2086A7440049A384 /* V2VController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA6189B2086A7440049A384 /* V2VController.m */; };
+		FADBFDB520C1A0EB00BB5092 /* V2VMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = FADBFDB320C1A0EB00BB5092 /* V2VMessage.h */; };
+		FADBFDB620C1A0EB00BB5092 /* V2VMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FADBFDB420C1A0EB00BB5092 /* V2VMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -11572,6 +11574,8 @@
 		FA9DBC812088E857006A090A /* V2VInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VInstance.m; sourceTree = "<group>"; };
 		FAA6189A2086A7440049A384 /* V2VController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VController.h; sourceTree = "<group>"; };
 		FAA6189B2086A7440049A384 /* V2VController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VController.m; sourceTree = "<group>"; };
+		FADBFDB320C1A0EB00BB5092 /* V2VMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VMessage.h; sourceTree = "<group>"; };
+		FADBFDB420C1A0EB00BB5092 /* V2VMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -22800,6 +22804,8 @@
 				FAA6189B2086A7440049A384 /* V2VController.m */,
 				FA9DBC802088E857006A090A /* V2VInstance.h */,
 				FA9DBC812088E857006A090A /* V2VInstance.m */,
+				FADBFDB320C1A0EB00BB5092 /* V2VMessage.h */,
+				FADBFDB420C1A0EB00BB5092 /* V2VMessage.m */,
 				FA806D8F208CA084006E9CD7 /* V2VTableDatasource.h */,
 				FA806D90208CA084006E9CD7 /* V2VTableDatasource.m */,
 				FA806D93208CAD2A006E9CD7 /* V2VDialogCell.h */,
@@ -23625,6 +23631,7 @@
 				D01161EC1F41F1340039383E /* TLcontacts_Contacts.h in Headers */,
 				68AD393E1BF5DE7700826A83 /* TGNotificationForwardHeaderView.h in Headers */,
 				D01159C51F41EE5F0039383E /* TLchannelDifferenceTooLong.h in Headers */,
+				FADBFDB520C1A0EB00BB5092 /* V2VMessage.h in Headers */,
 				D011613A1F41F1330039383E /* NSArray_ImportedContact.h in Headers */,
 				683848FC1C9C85C000C9A4DA /* STKDataSourceWrapper.h in Headers */,
 				D0C09C7B1A6E974D008369D7 /* TGSharedMediaImageViewQueue.h in Headers */,
@@ -26796,6 +26803,7 @@
 				D0115FA91F41F1300039383E /* TLRPCcontacts_unblock.mm in Sources */,
 				68A2FC301C1F0AF70061D67B /* TGAttachmentFileTipView.m in Sources */,
 				6836F8E81BB2626600D3A77B /* TGBridgeMediaSubscription.m in Sources */,
+				FADBFDB620C1A0EB00BB5092 /* V2VMessage.m in Sources */,
 				D0E6EE811E5CA25A002E89D1 /* TGCurrencyFormatter.m in Sources */,
 				D011611B1F41F1330039383E /* NSArray_Contact.mm in Sources */,
 				D0115F5D1F41F1300039383E /* TLRPCchannels_getAdminLogMeta.mm in Sources */,

@@ -6,8 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "V2VMessage.h"
 
 @interface V2VTableDatasource : NSObject <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) NSMutableArray * messages;
+@property (nonatomic, strong) NSMutableArray<V2VMessage *> * messages;
 
 @end

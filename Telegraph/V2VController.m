@@ -7,6 +7,7 @@
 
 #import "V2VController.h"
 #import "V2VDialogCell.h"
+#import "V2VMessage.h"
 
 static const CGFloat bottomOffset = 100;
 static const CGFloat tapToSpeakButtonSize = 50;
@@ -39,10 +40,22 @@ static const CGFloat tapToSpeakButtonSize = 50;
 - (void)configureDataSource {
     _dataSource = [V2VTableDatasource new];
     _dataSource.messages = [NSMutableArray new];
+    V2VMessage* messageObj = [[V2VMessage alloc] init:@"message message message message message messagemessagemessagemessagemessagemessagemessagemessage message message message message message message message message message messagemessagemessagemessagemessagemessagemessagemessage message message message message" outgoing:YES avatarUrl:nil];
+    [_dataSource.messages addObject:messageObj];
+    [_dataSource.messages addObject:messageObj];
+    [_dataSource.messages addObject:messageObj];
+    [_dataSource.messages addObject:messageObj];
+    [_dataSource.messages addObject:messageObj];
+    [_dataSource.messages addObject:messageObj];
+    [_dataSource.messages addObject:messageObj];
+    [_dataSource.messages addObject:messageObj];
+    [_dataSource.messages addObject:messageObj];
+
 }
 
 - (void)addMessage:(NSString *)message {
-    [_dataSource.messages addObject:message];
+    V2VMessage* messageObj = [[V2VMessage alloc] init:message outgoing:YES avatarUrl:nil];
+    [_dataSource.messages addObject:messageObj];
     [_table reloadData];
 }
 
@@ -59,6 +72,7 @@ static const CGFloat tapToSpeakButtonSize = 50;
     table.backgroundColor = [UIColor redColor];
     table.dataSource = _dataSource;
     table.delegate = _dataSource;
+    table.separatorStyle = UITableViewCellSeparatorStyleNone;
     [table registerClass:[V2VDialogCell class] forCellReuseIdentifier:@"reuseID"];
     return table;
 }

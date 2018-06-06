@@ -19,7 +19,8 @@
     if (cell == nil) {
         cell = [[V2VDialogCell alloc] init];
     }
-    cell.textLabel.text = [_messages objectAtIndex:indexPath.row];
+    cell.messageView.text = [_messages objectAtIndex:indexPath.row].text;
+    cell.incoming = arc4random() % 2;
     return cell;
 }
 
@@ -27,5 +28,8 @@
     return _messages.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [V2VDialogCell textSize:_messages[indexPath.row].text].height;
+}
 
 @end

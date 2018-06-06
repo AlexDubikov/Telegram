@@ -9,10 +9,11 @@
 #import "TGModernLetteredAvatarView.h"
 
 @interface V2VDialogCell : UITableViewCell
++ (CGSize)textSize:(NSString *)text;
 
 @property (nonatomic, strong) NSString* message;
 @property (nonatomic) TGModernLetteredAvatarView* avatarView;
-@property (nonatomic, strong) UILabel* messageView;
+@property (nonatomic, strong) UITextView* messageView;
 @property (nonatomic) BOOL incoming;
 
 @end

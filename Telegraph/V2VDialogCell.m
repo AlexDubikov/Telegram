@@ -11,8 +11,7 @@
 @implementation V2VDialogCell
 
 static const CGFloat marginTextField = 12;
-static const CGFloat smallOffset = 3;
-static const CGFloat bottomMarginTextField = 30;
+static const CGFloat smallOffset = 12;
 static const CGFloat avatarSize = 45;
 static const CGFloat avatarMargin = 12;
 
@@ -27,9 +26,8 @@ static const CGFloat avatarMargin = 12;
     // Configure the view for the selected state
 }
 
-- (instancetype)init
-{
-    self = [super init];
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self createViews];
     }
@@ -47,20 +45,21 @@ static const CGFloat avatarMargin = 12;
 }
 
 - (void)createViews {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     _avatarView = [[TGModernLetteredAvatarView alloc] init];
     static UIImage *placeholder = nil;
     static dispatch_once_t onceToken2;
     dispatch_once(&onceToken2, ^
                   {
-                      UIGraphicsBeginImageContextWithOptions(CGSizeMake(40.0f, 40.0f), false, 0.0f);
+                      UIGraphicsBeginImageContextWithOptions(CGSizeMake(avatarSize, avatarSize), false, 0.0f);
                       CGContextRef context = UIGraphicsGetCurrentContext();
 
                       //!placeholder
                       CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-                      CGContextFillEllipseInRect(context, CGRectMake(0.0f, 0.0f, 40.0f, 40.0f));
+                      CGContextFillEllipseInRect(context, CGRectMake(0.0f, 0.0f, avatarSize, avatarSize));
                       CGContextSetStrokeColorWithColor(context, UIColorRGB(0xd9d9d9).CGColor);
                       CGContextSetLineWidth(context, 1.0f);
-                      CGContextStrokeEllipseInRect(context, CGRectMake(0.5f, 0.5f, 39.0f, 39.0f));
+                      CGContextStrokeEllipseInRect(context, CGRectMake(0.5f, 0.5f, avatarSize - 1.0f, avatarSize - 1.0f));
 
                       placeholder = UIGraphicsGetImageFromCurrentImageContext();
                       UIGraphicsEndImageContext();
@@ -69,16 +68,47 @@ static const CGFloat avatarMargin = 12;
     [_avatarView setFirstName:@"first" lastName:@"last" uid:828882 placeholder:placeholder];
 
     [self addSubview:_avatarView];
+
+    _messageView = [UITextView new];
+    _messageView.scrollEnabled = NO;//нужно чтобы не сворачивалось
+    _messageView.textColor = [UIColor blackColor];//дефолтный цвет черный
+
+    _messageView.textContainerInset = UIEdgeInsetsMake(marginTextField, marginTextField, marginTextField, marginTextField);
+
+    _messageView.editable = NO; // Обязательно для работы dataDetectorTypes
+    _messageView.dataDetectorTypes = UIDataDetectorTypePhoneNumber | UIDataDetectorTypeLink;
+
+    _messageView.textAlignment = NSTextAlignmentLeft;
+
+    _messageView.linkTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor], NSUnderlineStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleSingle]};
+    _messageView.font = [UIFont systemFontOfSize:15];
+    _messageView.layer.cornerRadius = 8;
+
     [self addSubview:_messageView];
-    _incoming = true;
+
+    self.backgroundColor = [UIColor clearColor];
 }
 
 - (void)layoutAsIncoming {
-    _avatarView.frame = CGRectMake(0, 0, 50, 50);
+    _avatarView.frame = CGRectMake(marginTextField, marginTextField, avatarSize, avatarSize);
+    CGSize rectForSelf = [V2VDialogCell textSize:self.messageView.text];
+
+    CGFloat bubbleOrigin = avatarMargin * 2 + avatarSize;
+    _messageView.backgroundColor = [UIColor colorWithRed:197.0/255 green:255/255.0 blue:179.0/255 alpha:1];
+
+    self.messageView.frame = (CGRect) { bubbleOrigin, smallOffset, rectForSelf.width, rectForSelf.height - smallOffset };
+
 }
 
 - (void)layoutAsOutgoing {
 
+    _avatarView.frame = CGRectMake(self.bounds.size.width - avatarSize - marginTextField, marginTextField, avatarSize, avatarSize);
+    CGSize rectForSelf = [V2VDialogCell textSize:self.messageView.text];
+
+    CGFloat bubbleOrigin = self.bounds.size.width - rectForSelf.width - avatarSize - marginTextField * 2;
+    _messageView.backgroundColor = [UIColor whiteColor];
+
+    self.messageView.frame = (CGRect){bubbleOrigin, smallOffset, rectForSelf.width, rectForSelf.height - smallOffset};
 }
 
 + (CGSize)textSize:(NSString *)text {
@@ -101,7 +131,7 @@ static const CGFloat avatarMargin = 12;
     }
 
     rect.size.width = ceil(rect.size.width) + 1 + marginTextField * 2;
-    rect.size.height = ceil(rect.size.height) + bottomMarginTextField  + marginTextField;
+    rect.size.height = ceil(rect.size.height) + marginTextField;
 
     return rect.size;
 }
