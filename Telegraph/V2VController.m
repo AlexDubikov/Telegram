@@ -31,7 +31,7 @@ static const CGFloat tapToSpeakButtonSize = 50;
 - (CGFloat)topBarHeight {
     if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
         if (@available(iOS 11.0, *)) {
-            return UIApplication.sharedApplication.keyWindow.safeAreaInsets.top + 64;
+            return UIApplication.sharedApplication.keyWindow.safeAreaInsets.top + 44;
         }
     }
     return 44;
@@ -98,6 +98,7 @@ static const CGFloat tapToSpeakButtonSize = 50;
 - (void)viewDidLayoutSubviews {
 //    self.navBar.frame = CGRectMake(0, 0, self.view.frame.size.width, topBarHeight);
     _navBar.frame = CGRectMake(0, 0, self.view.frame.size.width, [self topBarHeight]);
+    _table.frame = CGRectMake(0, [self topBarHeight], self.view.frame.size.width, self.view.frame.size.height);
     self.tapToSpeakButton.frame = CGRectMake(self.view.bounds.size.width / 2 - tapToSpeakButtonSize/2, self.view.bounds.size.height - bottomOffset, tapToSpeakButtonSize, tapToSpeakButtonSize);
     self.leftButton.frame = CGRectMake(self.view.bounds.size.width / 5 - tapToSpeakButtonSize/2, self.view.bounds.size.height - bottomOffset, tapToSpeakButtonSize, tapToSpeakButtonSize);
     self.rightButton.frame = CGRectMake(4 * self.view.bounds.size.width / 5 - tapToSpeakButtonSize/2, self.view.bounds.size.height - bottomOffset, tapToSpeakButtonSize, tapToSpeakButtonSize);
