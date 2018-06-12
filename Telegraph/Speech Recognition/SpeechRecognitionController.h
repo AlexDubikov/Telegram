@@ -17,9 +17,13 @@
 @end
 
 
+
 @interface SpeechRecognitionController : UIViewController <SpeechRecognitionControllerDelegate>
 
 @property(weak, nonatomic) id <SpeechRecognitionControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIButton *recognizeButton;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIButton *dislikeButton;
 
 - (void)showText:(NSString *)text withPronunciation:(BOOL)usePronunciation;
 

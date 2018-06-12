@@ -7,7 +7,7 @@
 //
 
 #import "SpeechRecognizer.h"
-@import Speech;
+#import <Speech/Speech.h>
 
 @interface SpeechRecognizer()  <SFSpeechRecognizerDelegate>
 

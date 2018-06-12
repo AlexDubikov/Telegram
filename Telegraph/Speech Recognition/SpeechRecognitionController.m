@@ -14,9 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UITextView *speechTextView;
-@property (weak, nonatomic) IBOutlet UIButton *recognizeButton;
-@property (weak, nonatomic) IBOutlet UIButton *likeButton;
-@property (weak, nonatomic) IBOutlet UIButton *dislikeButton;
 
 @property (strong, nonatomic) SpeechRecognizer *speechRecognizer;
 @property (strong, nonatomic) SpeechSynthesizer *speechSynthesizer;

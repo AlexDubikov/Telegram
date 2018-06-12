@@ -18,6 +18,7 @@ static const CGFloat tapToSpeakButtonSize = 50;
 @property (nonatomic, strong) UIButton * tapToSpeakButton;
 @property (nonatomic, strong) UIButton * leftButton;
 @property (nonatomic, strong) UIButton * rightButton;
+@property (nonatomic, strong) SpeechRecognitionController * controller;
 @end
 
 @implementation V2VController
@@ -40,7 +41,7 @@ static const CGFloat tapToSpeakButtonSize = 50;
 - (void)configureDataSource {
     _dataSource = [V2VTableDatasource new];
     _dataSource.messages = [NSMutableArray new];
-    V2VMessage* messageObj = [[V2VMessage alloc] init:@"message message message message message messagemessagemessagemessagemessagemessagemessagemessage message message message message message message message message message messagemessagemessagemessagemessagemessagemessagemessage message message message message" outgoing:YES avatarUrl:nil];
+    V2VMessage* messageObj = [[V2VMessage alloc] init:@"message message message message message ьуу выа ыва ыва выа вы авыа выа" outgoing:YES avatarUrl:nil];
     [_dataSource.messages addObject:messageObj];
     [_dataSource.messages addObject:messageObj];
     [_dataSource.messages addObject:messageObj];
@@ -69,7 +70,7 @@ static const CGFloat tapToSpeakButtonSize = 50;
 - (UITableView*)makeTable {
     UITableView* table = [[UITableView alloc] initWithFrame:CGRectMake(0, [self topBarHeight], self.view.frame.size.width, self.view.frame.size.height - [self topBarHeight])];
     table.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    table.backgroundColor = [UIColor redColor];
+    table.backgroundColor = [UIColor clearColor];
     table.dataSource = _dataSource;
     table.delegate = _dataSource;
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -108,19 +109,32 @@ static const CGFloat tapToSpeakButtonSize = 50;
     [self configureDataSource];
 
     self.navBar = [self makeNavigationBar];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"car_bg"]];
     self.table = [self makeTable];
-    self.tapToSpeakButton = [self makeTapToSpeakButton];
-    self.leftButton = [self makeLeftButton];
-    self.rightButton = [self makeRightButton];
+    self.controller = [SpeechRecognitionController new];
+    self.controller.delegate = self;
+
+    [self.view addSubview:_controller.view];
+    [self.view addSubview:_table];
+    [self addChildViewController:_controller];
+
+    self.tapToSpeakButton = _controller.recognizeButton;
+    self.leftButton = _controller.likeButton;
+    self.rightButton = _controller.dislikeButton;
 
     [self.view addSubview:_navBar];
-    [self.view addSubview:_table];
     [self.view addSubview:_tapToSpeakButton];
     [self.view addSubview:_leftButton];
     [self.view addSubview:_rightButton];
 
-    self.view.backgroundColor = [UIColor colorWithRed:22.0/255.0 green:22.0/255.0 blue:28.0/255.0 alpha:1];
+
+//    self.view.backgroundColor = [UIColor colorWithRed:22.0/255.0 green:22.0/255.0 blue:28.0/255.0 alpha:1];
 }
+
+- (void)recognitionToFront {
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -129,6 +143,20 @@ static const CGFloat tapToSpeakButtonSize = 50;
 
 -(UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+
+- (void)didRecognize:(NSString *)text {
+    
+}
+
+
+- (void)didSendLike {
+
+}
+
+- (void)didSendDislike {
+
 }
 
 
