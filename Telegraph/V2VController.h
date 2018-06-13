@@ -13,5 +13,6 @@
 @property (nonatomic, strong) V2VTableDatasource * dataSource;
 @property (nonatomic, strong) UITableView * table;
 - (void)addMessage:(NSString *)message;
+- (void)recognitionToFront;
 
 @end

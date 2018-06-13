@@ -79,6 +79,8 @@
 }
 
 - (IBAction)recogniseSpeech:(id)sender {
+    [self.delegate didBeginRecognition];
+
     self.speechTextView.text = @"";
     [self showRecognitionAnimation:YES];
     

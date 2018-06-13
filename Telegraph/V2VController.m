@@ -10,7 +10,7 @@
 #import "V2VMessage.h"
 
 static const CGFloat bottomOffset = 100;
-static const CGFloat tapToSpeakButtonSize = 50;
+static const CGFloat tapToSpeakButtonSize = 60;
 
 @interface V2VController ()
 
@@ -41,7 +41,7 @@ static const CGFloat tapToSpeakButtonSize = 50;
 - (void)configureDataSource {
     _dataSource = [V2VTableDatasource new];
     _dataSource.messages = [NSMutableArray new];
-    V2VMessage* messageObj = [[V2VMessage alloc] init:@"message message message message message ьуу выа ыва ыва выа вы авыа выа" outgoing:YES avatarUrl:nil];
+    V2VMessage* messageObj = [[V2VMessage alloc] init:@"вы авыа выа" outgoing:YES avatarUrl:nil];
     [_dataSource.messages addObject:messageObj];
     [_dataSource.messages addObject:messageObj];
     [_dataSource.messages addObject:messageObj];
@@ -103,13 +103,17 @@ static const CGFloat tapToSpeakButtonSize = 50;
     self.tapToSpeakButton.frame = CGRectMake(self.view.bounds.size.width / 2 - tapToSpeakButtonSize/2, self.view.bounds.size.height - bottomOffset, tapToSpeakButtonSize, tapToSpeakButtonSize);
     self.leftButton.frame = CGRectMake(self.view.bounds.size.width / 5 - tapToSpeakButtonSize/2, self.view.bounds.size.height - bottomOffset, tapToSpeakButtonSize, tapToSpeakButtonSize);
     self.rightButton.frame = CGRectMake(4 * self.view.bounds.size.width / 5 - tapToSpeakButtonSize/2, self.view.bounds.size.height - bottomOffset, tapToSpeakButtonSize, tapToSpeakButtonSize);
+    CGRect frame = self.view.frame;
+    self.controller.view.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
 }
 
 -(void)configure {
     [self configureDataSource];
 
     self.navBar = [self makeNavigationBar];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"car_bg"]];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"car_bg"]];
+    self.view.layer.contents = (id)[UIImage imageNamed:@"car_bg"].CGImage;
+
     self.table = [self makeTable];
     self.controller = [SpeechRecognitionController new];
     self.controller.delegate = self;
@@ -127,12 +131,21 @@ static const CGFloat tapToSpeakButtonSize = 50;
     [self.view addSubview:_leftButton];
     [self.view addSubview:_rightButton];
 
+    [self hideRecognition];
 
 //    self.view.backgroundColor = [UIColor colorWithRed:22.0/255.0 green:22.0/255.0 blue:28.0/255.0 alpha:1];
 }
 
 - (void)recognitionToFront {
-    
+    [self.view bringSubviewToFront:_controller.view];
+    [UIView animateWithDuration:0.3 animations:^{
+        _controller.view.hidden = NO;
+
+    }];
+}
+
+- (void)hideRecognition {
+    _controller.view.hidden = YES;
 }
 
 
@@ -145,9 +158,14 @@ static const CGFloat tapToSpeakButtonSize = 50;
     return UIStatusBarStyleLightContent;
 }
 
+-(void)didBeginRecognition {
+    [self recognitionToFront];
+}
+
 
 - (void)didRecognize:(NSString *)text {
-    
+    [self hideRecognition];
+    [];//15447944
 }
 
 

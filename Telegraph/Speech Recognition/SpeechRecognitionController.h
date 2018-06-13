@@ -13,7 +13,7 @@
 - (void)didRecognize:(NSString *)text;
 - (void)didSendLike;
 - (void)didSendDislike;
-
+- (void)didBeginRecognition;
 @end
 
 

@@ -91,7 +91,7 @@ static const CGFloat avatarMargin = 12;
 
 - (void)layoutAsIncoming {
     _avatarView.frame = CGRectMake(marginTextField, marginTextField, avatarSize, avatarSize);
-    CGSize rectForSelf = [V2VDialogCell textSize:self.messageView.text];
+    CGSize rectForSelf = [V2VDialogCell rectForText:self.messageView.text];
 
     CGFloat bubbleOrigin = avatarMargin * 2 + avatarSize;
     _messageView.backgroundColor = [UIColor colorWithRed:197.0/255 green:255/255.0 blue:179.0/255 alpha:1];
@@ -103,7 +103,7 @@ static const CGFloat avatarMargin = 12;
 - (void)layoutAsOutgoing {
 
     _avatarView.frame = CGRectMake(self.bounds.size.width - avatarSize - marginTextField, marginTextField, avatarSize, avatarSize);
-    CGSize rectForSelf = [V2VDialogCell textSize:self.messageView.text];
+    CGSize rectForSelf = [V2VDialogCell rectForText:self.messageView.text];
 
     CGFloat bubbleOrigin = self.bounds.size.width - rectForSelf.width - avatarSize - marginTextField * 2;
     _messageView.backgroundColor = [UIColor whiteColor];
@@ -112,10 +112,21 @@ static const CGFloat avatarMargin = 12;
 }
 
 + (CGSize)textSize:(NSString *)text {
+
+    CGSize size = [V2VDialogCell rectForText:text];
+
+    if (size.height < marginTextField * 2 + avatarSize) {
+        size.height = marginTextField * 2 + avatarSize;
+    }
+
+    return size;
+}
+
++ (CGSize)rectForText:(NSString *)text {
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [style setLineBreakMode:NSLineBreakByWordWrapping];
 
-    CGFloat maxWidth = [UIScreen mainScreen].bounds.size.width - avatarMargin * 2 - avatarSize - marginTextField * 3 - smallOffset * 2;
+    CGFloat maxWidth = [UIScreen mainScreen].bounds.size.width - avatarMargin * 2 - avatarSize - marginTextField * 3 - smallOffset * 2 - marginTextField * 2;
 
 
     NSDictionary *sizeAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName: style};
@@ -130,8 +141,8 @@ static const CGFloat avatarMargin = 12;
         rect.size.width = minimumWidth;
     }
 
-    rect.size.width = ceil(rect.size.width) + 1 + marginTextField * 2;
-    rect.size.height = ceil(rect.size.height) + marginTextField;
+    rect.size.width = ceil(rect.size.width) + 1 + marginTextField * 4;
+    rect.size.height = ceil(rect.size.height) + marginTextField * 2 + smallOffset;
 
     return rect.size;
 }
