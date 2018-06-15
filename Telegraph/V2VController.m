@@ -8,6 +8,7 @@
 #import "V2VController.h"
 #import "V2VDialogCell.h"
 #import "V2VMessage.h"
+#import "TGInterfaceManager.h"
 
 static const CGFloat bottomOffset = 100;
 static const CGFloat tapToSpeakButtonSize = 60;
@@ -165,7 +166,7 @@ static const CGFloat tapToSpeakButtonSize = 60;
 
 - (void)didRecognize:(NSString *)text {
     [self hideRecognition];
-    [];//15447944
+    [[TGInterfaceManager instance] navigateToConversationWithId:15447944 conversation:nil performActions:@{@"sendMessages": @[text]}];//
 }
 
 
