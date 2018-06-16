@@ -10,7 +10,7 @@
 
 @implementation V2VInstance
 
-+ (id)shared
++ (instancetype)shared
 {
     static V2VInstance* _animator = nil;
     static dispatch_once_t onceToken;
@@ -49,16 +49,18 @@
     }
 }
 
-- (void)addIncomingMessage:(NSString*)message fromId:(uint32_t)senderId {
-    if (senderId !=_opponentId) {
+- (void)addIncomingMessage:(NSString*)message fromId:(int)senderId {
+    if (senderId !=_opponentId ) {
         _controller.dataSource.messages = [NSMutableArray new];
-        _opponentId = senderId;
+        if (senderId != _selfId) {
+            _opponentId = senderId;
+        }
     }
     if ([NSThread isMainThread]) {
-        [_controller addMessage:message];
+        [_controller addMessage:message from:senderId];
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_controller addMessage:message];
+            [_controller addMessage:message from:senderId];
         });
     }
     NSLog(@"%@",message);

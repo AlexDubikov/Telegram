@@ -9,11 +9,13 @@
 #import "V2VController.h"
 
 @interface V2VInstance : NSObject
-+ (id)shared;
++ (instancetype)shared;
 - (void)setEnabled;
 - (void)activate;
-- (void)addIncomingMessage:(NSString*)message fromId:(uint32_t)senderId;
-@property (nonatomic) uint32_t opponentId;
+- (void)addIncomingMessage:(NSString*)message fromId:(int)senderId;
+@property (nonatomic) int opponentId;
+@property (nonatomic) int selfId;
+
 @property (nonatomic) BOOL configured;
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) V2VController *controller;

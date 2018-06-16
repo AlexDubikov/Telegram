@@ -8,7 +8,68 @@
 #import "V2VController.h"
 #import "V2VDialogCell.h"
 #import "V2VMessage.h"
+#import "V2VInstance.h"
+
 #import "TGInterfaceManager.h"
+#import "TGDatabase.h"
+
+#import <LegacyComponents/LegacyComponents.h>
+
+#import "FMDatabase.h"
+
+#import "ATQueue.h"
+
+#import "TGTimer.h"
+
+#import "TGTelegraph.h"
+#import "TGAppDelegate.h"
+
+#import <LegacyComponents/ActionStage.h>
+#import <LegacyComponents/SGraphObjectNode.h>
+
+#import <LegacyComponents/TGCache.h>
+#import <LegacyComponents/TGRemoteImageView.h>
+
+#import <SSignalKit/SSignalKit.h>
+
+#import "TGPreparedLocalDocumentMessage.h"
+
+#import "TGGlobalMessageSearchSignals.h"
+
+#import "TGSpotlightIndexData.h"
+
+#import <MobileCoreServices/MobileCoreServices.h>
+
+#import "TGModernSendSecretMessageActor.h"
+
+#import "TGTelegramNetworking.h"
+#import "TGConversationAddMessagesActor.h"
+
+#import "TGChannelList.h"
+
+#import "TGMediaCacheIndexData.h"
+
+
+#import "TGRemoteRecentPeer.h"
+#import "TGRemoteRecentPeerSet.h"
+#import "TGRemoteRecentPeerCategories.h"
+
+#import "TGMessageViewedContentProperty.h"
+
+#import "TGInterfaceManager.h"
+#import "TGRecentGifsSignal.h"
+#import "TGRecentStickersSignal.h"
+
+#import "TGGroupManagementSignals.h"
+
+#import "TGCdnData.h"
+
+#import "TGAudioMediaAttachment+Telegraph.h"
+#import "TGUser+Telegraph.h"
+
+#import "TGUnseenPeerMentionsState.h"
+#import "TGUnseenPeerMentionsMessageIdsState.h"
+
 
 static const CGFloat bottomOffset = 100;
 static const CGFloat tapToSpeakButtonSize = 60;
@@ -33,30 +94,22 @@ static const CGFloat tapToSpeakButtonSize = 60;
 - (CGFloat)topBarHeight {
     if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
         if (@available(iOS 11.0, *)) {
-            return UIApplication.sharedApplication.keyWindow.safeAreaInsets.top + 44;
+            return UIApplication.sharedApplication.keyWindow.safeAreaInsets.top + 64;
         }
     }
-    return 44;
+    return 64;
 }
 
 - (void)configureDataSource {
     _dataSource = [V2VTableDatasource new];
     _dataSource.messages = [NSMutableArray new];
-    V2VMessage* messageObj = [[V2VMessage alloc] init:@"вы авыа выа" outgoing:YES avatarUrl:nil];
-    [_dataSource.messages addObject:messageObj];
-    [_dataSource.messages addObject:messageObj];
-    [_dataSource.messages addObject:messageObj];
-    [_dataSource.messages addObject:messageObj];
-    [_dataSource.messages addObject:messageObj];
-    [_dataSource.messages addObject:messageObj];
-    [_dataSource.messages addObject:messageObj];
-    [_dataSource.messages addObject:messageObj];
-    [_dataSource.messages addObject:messageObj];
-
 }
 
-- (void)addMessage:(NSString *)message {
-    V2VMessage* messageObj = [[V2VMessage alloc] init:message outgoing:YES avatarUrl:nil];
+- (void)addMessage:(NSString *)message from:(int)sender {
+
+    [_controller showText:message withPronunciation:YES];
+
+    V2VMessage* messageObj = [[V2VMessage alloc] init:message outgoing:sender == [[V2VInstance shared] selfId] avatarUrl:nil];
     [_dataSource.messages addObject:messageObj];
     [_table reloadData];
 }
@@ -133,8 +186,6 @@ static const CGFloat tapToSpeakButtonSize = 60;
     [self.view addSubview:_rightButton];
 
     [self hideRecognition];
-
-//    self.view.backgroundColor = [UIColor colorWithRed:22.0/255.0 green:22.0/255.0 blue:28.0/255.0 alpha:1];
 }
 
 - (void)recognitionToFront {
@@ -166,15 +217,31 @@ static const CGFloat tapToSpeakButtonSize = 60;
 
 - (void)didRecognize:(NSString *)text {
     [self hideRecognition];
-    [[TGInterfaceManager instance] navigateToConversationWithId:15447944 conversation:nil performActions:@{@"sendMessages": @[text]}];//
+
+    TGMessage *message = [[TGMessage alloc] init];
+    message.text = text;
+
+    [[TGInterfaceManager instance] navigateToConversationWithId:[[V2VInstance shared] opponentId] conversation:nil performActions:@{@"sendMessages": @[message]}];
+
+    [[V2VInstance shared] addIncomingMessage:text fromId:[[V2VInstance shared] selfId]];
 }
 
 
 - (void)didSendLike {
+    TGMessage *message = [[TGMessage alloc] init];
+    message.text = @"☺️";
+
+    [[TGInterfaceManager instance] navigateToConversationWithId:[[V2VInstance shared] opponentId] conversation:nil performActions:@{@"sendMessages": @[message]}];
+    [[V2VInstance shared] addIncomingMessage:@"☺️" fromId:[[V2VInstance shared] selfId]];
 
 }
 
 - (void)didSendDislike {
+    TGMessage *message = [[TGMessage alloc] init];
+    message.text = @"😡";
+
+    [[TGInterfaceManager instance] navigateToConversationWithId:[[V2VInstance shared] opponentId] conversation:nil performActions:@{@"sendMessages": @[message]}];
+    [[V2VInstance shared] addIncomingMessage:@"😡" fromId:[[V2VInstance shared] selfId]];
 
 }
 

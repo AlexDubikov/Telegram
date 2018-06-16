@@ -12,7 +12,8 @@
 @interface V2VController : UIViewController <SpeechRecognitionControllerDelegate>
 @property (nonatomic, strong) V2VTableDatasource * dataSource;
 @property (nonatomic, strong) UITableView * table;
-- (void)addMessage:(NSString *)message;
+
+- (void)addMessage:(NSString *)message from:(int)sender;
 - (void)recognitionToFront;
 
 @end

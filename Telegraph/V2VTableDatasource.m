@@ -20,7 +20,7 @@
         cell = [[V2VDialogCell alloc] init];
     }
     cell.messageView.text = [_messages objectAtIndex:indexPath.row].text;
-    cell.incoming = arc4random() % 2;
+    cell.incoming = ![_messages objectAtIndex:indexPath.row].outgoing;
     return cell;
 }
 

@@ -1606,6 +1606,7 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
             TGUser *user = [[TGDatabase instance] loadUser:uid];
             [[V2VInstance shared] setEnabled];
             [[V2VInstance shared] activate];
+            [V2VInstance shared].selfId = _clientUserId;
 
             if (user != nil)
             {
