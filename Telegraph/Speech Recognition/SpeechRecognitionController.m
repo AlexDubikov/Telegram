@@ -12,9 +12,6 @@
 
 @interface SpeechRecognitionController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-@property (weak, nonatomic) IBOutlet UITextView *speechTextView;
-
 @property (strong, nonatomic) SpeechRecognizer *speechRecognizer;
 @property (strong, nonatomic) SpeechSynthesizer *speechSynthesizer;
 @property (strong, nonatomic) CALayer *animatedLayer;

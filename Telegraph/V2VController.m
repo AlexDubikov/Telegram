@@ -70,6 +70,7 @@
 #import "TGUnseenPeerMentionsState.h"
 #import "TGUnseenPeerMentionsMessageIdsState.h"
 
+#import "V2VService.h"
 
 static const CGFloat bottomOffset = 100;
 static const CGFloat tapToSpeakButtonSize = 60;
@@ -216,33 +217,37 @@ static const CGFloat tapToSpeakButtonSize = 60;
 
 
 - (void)didRecognize:(NSString *)text {
-    [self hideRecognition];
 
     TGMessage *message = [[TGMessage alloc] init];
     message.text = text;
 
-    [[TGInterfaceManager instance] navigateToConversationWithId:[[V2VInstance shared] opponentId] conversation:nil performActions:@{@"sendMessages": @[message]}];
+    [[V2VService shared] getTelegramIdUsingText:text telegramId:[[V2VInstance shared] opponentId] withCompletion:^(int opponentId) {
 
-    [[V2VInstance shared] addIncomingMessage:text fromId:[[V2VInstance shared] selfId]];
+        if (opponentId != 0) {
+            [[TGInterfaceManager instance] navigateToConversationWithId:opponentId conversation:nil performActions:@{@"sendMessages": @[message]}];
+            [[V2VInstance shared] addIncomingMessage:text fromId:[[V2VInstance shared] selfId]];
+            [self hideRecognition];
+        } else {
+            _controller.speechTextView.text = @"Couldn't find the car you described.\nTry providing more details.";
+        }
+    }];
+
+
 }
 
 
 - (void)didSendLike {
     TGMessage *message = [[TGMessage alloc] init];
     message.text = @"☺️";
-
-    [[TGInterfaceManager instance] navigateToConversationWithId:[[V2VInstance shared] opponentId] conversation:nil performActions:@{@"sendMessages": @[message]}];
+    [[V2VService shared] sendRate:YES];
     [[V2VInstance shared] addIncomingMessage:@"☺️" fromId:[[V2VInstance shared] selfId]];
-
 }
 
 - (void)didSendDislike {
     TGMessage *message = [[TGMessage alloc] init];
     message.text = @"😡";
-
-    [[TGInterfaceManager instance] navigateToConversationWithId:[[V2VInstance shared] opponentId] conversation:nil performActions:@{@"sendMessages": @[message]}];
+    [[V2VService shared] sendRate:NO];
     [[V2VInstance shared] addIncomingMessage:@"😡" fromId:[[V2VInstance shared] selfId]];
-
 }
 
 

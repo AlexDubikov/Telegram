@@ -4829,6 +4829,10 @@
 		FA9DBC832088E857006A090A /* V2VInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9DBC812088E857006A090A /* V2VInstance.m */; };
 		FAA6189C2086A7440049A384 /* V2VController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAA6189A2086A7440049A384 /* V2VController.h */; };
 		FAA6189D2086A7440049A384 /* V2VController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA6189B2086A7440049A384 /* V2VController.m */; };
+		FAD606BD20D520350015F1E1 /* V2VService.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD606BB20D520350015F1E1 /* V2VService.h */; };
+		FAD606BE20D520350015F1E1 /* V2VService.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD606BC20D520350015F1E1 /* V2VService.m */; };
+		FAD606D120D849610015F1E1 /* V2VModels.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD606CF20D849610015F1E1 /* V2VModels.h */; };
+		FAD606D220D849610015F1E1 /* V2VModels.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD606D020D849610015F1E1 /* V2VModels.m */; };
 		FADBFDB520C1A0EB00BB5092 /* V2VMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = FADBFDB320C1A0EB00BB5092 /* V2VMessage.h */; };
 		FADBFDB620C1A0EB00BB5092 /* V2VMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = FADBFDB420C1A0EB00BB5092 /* V2VMessage.m */; };
 /* End PBXBuildFile section */
@@ -11592,6 +11596,10 @@
 		FA9DBC812088E857006A090A /* V2VInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VInstance.m; sourceTree = "<group>"; };
 		FAA6189A2086A7440049A384 /* V2VController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VController.h; sourceTree = "<group>"; };
 		FAA6189B2086A7440049A384 /* V2VController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VController.m; sourceTree = "<group>"; };
+		FAD606BB20D520350015F1E1 /* V2VService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VService.h; sourceTree = "<group>"; };
+		FAD606BC20D520350015F1E1 /* V2VService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VService.m; sourceTree = "<group>"; };
+		FAD606CF20D849610015F1E1 /* V2VModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VModels.h; sourceTree = "<group>"; };
+		FAD606D020D849610015F1E1 /* V2VModels.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VModels.m; sourceTree = "<group>"; };
 		FADBFDB320C1A0EB00BB5092 /* V2VMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2VMessage.h; sourceTree = "<group>"; };
 		FADBFDB420C1A0EB00BB5092 /* V2VMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2VMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -22854,6 +22862,10 @@
 				FA806D8E208C8BFB006E9CD7 /* Recognition */,
 				FAA6189A2086A7440049A384 /* V2VController.h */,
 				FAA6189B2086A7440049A384 /* V2VController.m */,
+				FAD606BB20D520350015F1E1 /* V2VService.h */,
+				FAD606BC20D520350015F1E1 /* V2VService.m */,
+				FAD606CF20D849610015F1E1 /* V2VModels.h */,
+				FAD606D020D849610015F1E1 /* V2VModels.m */,
 				FA9DBC802088E857006A090A /* V2VInstance.h */,
 				FA9DBC812088E857006A090A /* V2VInstance.m */,
 				FADBFDB320C1A0EB00BB5092 /* V2VMessage.h */,
@@ -23432,6 +23444,7 @@
 				FA166EDB20C88349001A7EC4 /* SpeechSynthesizer.h in Headers */,
 				D0115FB01F41F1300039383E /* TLRpcDropAnswer.h in Headers */,
 				D0249A9D1ABCA6880076ECBF /* TGICloudItem.h in Headers */,
+				FAD606BD20D520350015F1E1 /* V2VService.h in Headers */,
 				D0115F2A1F41F1300039383E /* TLRPCauth_checkPhone.h in Headers */,
 				D02566AC1AD2C28F007C19C1 /* TLRPCmessages_sendMessage_manual.h in Headers */,
 				D0249BCC1ABF5B470076ECBF /* GDGoogleDriveFileServiceSession.h in Headers */,
@@ -23632,6 +23645,7 @@
 				D0C6AF021A7270E40046833D /* TGSharedMediaFileThumbnailView.h in Headers */,
 				D05EEA5C1CA4847100B7AE07 /* TGDocumentWithThumbnailContentModel.h in Headers */,
 				D01160AE1F41F1320039383E /* TLRPCupdates_getChannelDifference.h in Headers */,
+				FAD606D120D849610015F1E1 /* V2VModels.h in Headers */,
 				D01160081F41F1310039383E /* TLRPCmessages_getDialogs.h in Headers */,
 				68EE34711C848393002F5419 /* TGShareCommentView.h in Headers */,
 				09F3431A1F9F504D00216F26 /* TGGenericPeerGalleryGroupItem.h in Headers */,
@@ -26074,6 +26088,7 @@
 				D011610B1F41F1320039383E /* NSArray_BotCommand.mm in Sources */,
 				68B63D551BB25B5200205AC3 /* TGBridgeServer.m in Sources */,
 				D01F95151E5E3DB5002627A1 /* StripeError.m in Sources */,
+				FAD606BE20D520350015F1E1 /* V2VService.m in Sources */,
 				D011610D1F41F1320039383E /* NSArray_BotInfo.mm in Sources */,
 				FA806D96208CAD2A006E9CD7 /* V2VDialogCell.m in Sources */,
 				D02478D31E4CFA4B0083C3F3 /* TGAnimationUtils.m in Sources */,
@@ -27020,6 +27035,7 @@
 				D0C09C891A6E974D008369D7 /* TGSharedMediaTitleButton.m in Sources */,
 				D0115F251F41F1300039383E /* TLRPCaccount_updateUsername.mm in Sources */,
 				D0498FCF197857CD0080A679 /* TGModernGalleryRotationGestureRecognizer.m in Sources */,
+				FAD606D220D849610015F1E1 /* V2VModels.m in Sources */,
 				D09FC0141A2731550075D7BD /* TGCheckPasswordActor.m in Sources */,
 				09327E9A1F1C7CC200DDB721 /* TGUserInfoEditingAboutCollectionItemView.m in Sources */,
 				D0A4D7D91C10D91E00537E74 /* TGInternalGifSearchResultItemView.m in Sources */,

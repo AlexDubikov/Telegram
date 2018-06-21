@@ -91,7 +91,7 @@
 }
 
 - (void)scheduleSilenceTimer {
-    NSTimeInterval silenceTime = 2.0;
+    NSTimeInterval silenceTime = 1.0;
     
     _speechSilenceTimer = [NSTimer scheduledTimerWithTimeInterval:silenceTime
                                                           target:self
