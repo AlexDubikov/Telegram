@@ -54,13 +54,15 @@
     }
 }
 
-- (void)addIncomingMessage:(NSString*)message fromId:(int)senderId {
-    if (senderId !=_opponentId ) {
+- (void)addIncomingMessage:(NSString*)message fromId:(int)senderId toId:(int)receiverId {
+    if (senderId != _opponentId && senderId != _selfId) { // smb sent me a message
+        _opponentId = senderId;
         _controller.dataSource.messages = [NSMutableArray new];
-        if (senderId != _selfId) {
-            _opponentId = senderId;
-        }
+    } else if (senderId == _selfId && _opponentId != receiverId) { // I'm sending a message to smb
+        _opponentId = receiverId;
+        _controller.dataSource.messages = [NSMutableArray new];
     }
+
     if ([NSThread isMainThread]) {
         [_controller addMessage:message from:senderId];
     } else {

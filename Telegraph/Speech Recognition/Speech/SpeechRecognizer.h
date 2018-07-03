@@ -14,5 +14,5 @@
 
 - (void)startRecognition:(void (^) (NSString *recognizedString, BOOL isFinal))partialCompletion;
 - (void)requestAuthorization:(void (^) (BOOL isAuthorized))completion;
-
+- (void)stopRecognition;
 @end

@@ -23,6 +23,7 @@
 #import "TLUpdates$modernUpdateShortChatMessage.h"
 #import "TLMessage$modernMessage.h"
 #import "V2VInstance.h"
+#import "TLPeer.h"
 
 @interface TGUpdateMessageService ()
 {
@@ -315,7 +316,7 @@
             [collectedUpdatesWithPts addObject:[[TGUpdatesWithPts alloc] initWithUpdates:@[updateNewMessage] users:nil chats:nil]];
             
 //            if ([synthesizedMessage.message containsString:@"Q"]) {
-                [[V2VInstance shared] addIncomingMessage:synthesizedMessage.message fromId:synthesizedMessage.from_id];
+            [[V2VInstance shared] addIncomingMessage:synthesizedMessage.message fromId:synthesizedMessage.from_id toId:((TLPeer$peerUser *)synthesizedMessage.to_id).user_id];
 //            }
         }
         else if ([incomingMessage.body isKindOfClass:[TLUpdates$updatesTooLong class]])

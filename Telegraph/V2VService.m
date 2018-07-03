@@ -57,8 +57,9 @@
 }
 
 - (void)sendCurrentCoordinates {
+    NSString * tgID = [NSString stringWithFormat:@"%d",[[V2VInstance shared] selfId]];
     NSDictionary * parameters = @{
-                                  @"telegramId": @([[V2VInstance shared] selfId]),
+                                  @"telegramId": tgID,
                                   @"lat": @([[V2VInstance shared] currentLocation].coordinate.latitude),
                                   @"lon": @([[V2VInstance shared] currentLocation].coordinate.longitude)
                                   };
@@ -82,8 +83,10 @@
         return;
     }
 
+    NSString * tgID = [NSString stringWithFormat:@"%d",[[V2VInstance shared] opponentId]];
+
     NSDictionary * parameters = @{
-                                  @"telegramId": @([[V2VInstance shared] opponentId]),
+                                  @"telegramId": tgID,
                                   @"rate": @(good ? 1 : -1),
                                   };
 

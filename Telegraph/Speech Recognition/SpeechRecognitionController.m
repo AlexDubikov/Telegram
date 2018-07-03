@@ -12,7 +12,6 @@
 
 @interface SpeechRecognitionController ()
 
-@property (strong, nonatomic) SpeechRecognizer *speechRecognizer;
 @property (strong, nonatomic) SpeechSynthesizer *speechSynthesizer;
 @property (strong, nonatomic) CALayer *animatedLayer;
 
@@ -154,6 +153,10 @@
 
 - (void)disableRecognizeButton {
     self.recognizeButton.enabled = NO;
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {

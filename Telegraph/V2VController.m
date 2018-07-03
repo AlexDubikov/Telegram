@@ -108,11 +108,14 @@ static const CGFloat tapToSpeakButtonSize = 60;
 
 - (void)addMessage:(NSString *)message from:(int)sender {
 
-    [_controller showText:message withPronunciation:YES];
+    BOOL senderIsMe = sender == [[V2VInstance shared] selfId];
+    
+    [_controller showText:message withPronunciation:!senderIsMe];
 
     V2VMessage* messageObj = [[V2VMessage alloc] init:message outgoing:sender == [[V2VInstance shared] selfId] avatarUrl:nil];
     [_dataSource.messages addObject:messageObj];
     [_table reloadData];
+    [_table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_dataSource.messages.count - 1 inSection:0]  atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 - (UIView*)makeNavigationBar {
@@ -123,7 +126,7 @@ static const CGFloat tapToSpeakButtonSize = 60;
 }
 
 - (UITableView*)makeTable {
-    UITableView* table = [[UITableView alloc] initWithFrame:CGRectMake(0, [self topBarHeight], self.view.frame.size.width, self.view.frame.size.height - [self topBarHeight])];
+    UITableView* table = [[UITableView alloc] initWithFrame:CGRectMake(0, [self topBarHeight], self.view.frame.size.width, self.view.frame.size.height - [self topBarHeight] - bottomOffset)];
     table.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     table.backgroundColor = [UIColor clearColor];
     table.dataSource = _dataSource;
@@ -187,14 +190,24 @@ static const CGFloat tapToSpeakButtonSize = 60;
     [self.view addSubview:_rightButton];
 
     [self hideRecognition];
+
+    [_controller.closeButton addTarget:self action:@selector(stopAndHideRecognition) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)recognitionToFront {
     [self.view bringSubviewToFront:_controller.view];
     [UIView animateWithDuration:0.3 animations:^{
         _controller.view.hidden = NO;
-
     }];
+}
+
+- (void)recognitionButtonToFront {
+    [self.view bringSubviewToFront:_tapToSpeakButton];
+}
+
+- (void)stopAndHideRecognition {
+    [_controller.speechRecognizer stopRecognition];
+    [self hideRecognition];
 }
 
 - (void)hideRecognition {
@@ -225,10 +238,11 @@ static const CGFloat tapToSpeakButtonSize = 60;
 
         if (opponentId != 0) {
             [[TGInterfaceManager instance] navigateToConversationWithId:opponentId conversation:nil performActions:@{@"sendMessages": @[message]}];
-            [[V2VInstance shared] addIncomingMessage:text fromId:[[V2VInstance shared] selfId]];
+            [[V2VInstance shared] addIncomingMessage:text fromId:[[V2VInstance shared] selfId] toId:[[V2VInstance shared] opponentId]];
             [self hideRecognition];
         } else {
-            _controller.speechTextView.text = @"Couldn't find the car you described.\nTry providing more details.";
+            _controller.speechTextView.text = @"Couldn't find the car. Probably, it's not registered yet. Invite your friends to get +5 rating for each of them.";
+            [self recognitionButtonToFront];
         }
     }];
 
@@ -240,14 +254,14 @@ static const CGFloat tapToSpeakButtonSize = 60;
     TGMessage *message = [[TGMessage alloc] init];
     message.text = @"☺️";
     [[V2VService shared] sendRate:YES];
-    [[V2VInstance shared] addIncomingMessage:@"☺️" fromId:[[V2VInstance shared] selfId]];
+    [[V2VInstance shared] addIncomingMessage:@"☺️" fromId:[[V2VInstance shared] selfId] toId:[[V2VInstance shared] opponentId]];
 }
 
 - (void)didSendDislike {
     TGMessage *message = [[TGMessage alloc] init];
     message.text = @"😡";
     [[V2VService shared] sendRate:NO];
-    [[V2VInstance shared] addIncomingMessage:@"😡" fromId:[[V2VInstance shared] selfId]];
+    [[V2VInstance shared] addIncomingMessage:@"😡" fromId:[[V2VInstance shared] selfId] toId:[[V2VInstance shared] opponentId]];
 }
 
 

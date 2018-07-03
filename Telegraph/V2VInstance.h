@@ -14,7 +14,7 @@
 + (instancetype)shared;
 - (void)setEnabled;
 - (void)activate;
-- (void)addIncomingMessage:(NSString*)message fromId:(int)senderId;
+- (void)addIncomingMessage:(NSString*)message fromId:(int)senderId toId:(int)receiverId;
 @property (nonatomic) int opponentId;
 @property (nonatomic) int selfId;
 

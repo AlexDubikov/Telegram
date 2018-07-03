@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SpeechRecognizer.h"
 
 @protocol SpeechRecognitionControllerDelegate
 @optional
@@ -26,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *dislikeButton;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UITextView *speechTextView;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (strong, nonatomic) SpeechRecognizer *speechRecognizer;
 
 - (void)showText:(NSString *)text withPronunciation:(BOOL)usePronunciation;
 
