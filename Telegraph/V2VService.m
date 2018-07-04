@@ -46,15 +46,14 @@
     [_client getPath:@"api/destinationForMessage"
           parameters:parameters
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 NSLog(@"%@",responseObject);
                  NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                               options:kNilOptions
                                                                                 error:nil];
-                 NSLog(@"%@ %@",jsonResponse[@"telegramId"], jsonResponse[@"userId"]);
+                 NSLog(@"destination: %@ %@",jsonResponse[@"telegramId"], jsonResponse[@"userId"]);
                  block([jsonResponse[@"telegramId"] intValue]);
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 NSLog(@"oops, %@",error);
+                 NSLog(@"destination: oops, %@",error);
                  block(0);
              }
      ];
@@ -86,14 +85,13 @@
 
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, __unused id responseObject)
      {
-         NSLog(@"%@",responseObject);
          NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                       options:kNilOptions
                                                                         error:nil];
-         NSLog(@"%@",jsonResponse);
+         NSLog(@"coords: %@",jsonResponse);
      } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error)
      {
-         NSLog(@"oops, %@",error);
+         NSLog(@"oops coords, %@",error);
      }];
 
 
@@ -124,14 +122,13 @@
 
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, __unused id responseObject)
      {
-         NSLog(@"%@",responseObject);
          NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                       options:kNilOptions
                                                                         error:nil];
-         NSLog(@"%@",jsonResponse);
+         NSLog(@"rate: %@",jsonResponse);
      } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error)
      {
-         NSLog(@"oops, %@",error);
+         NSLog(@"rate: oops, %@",error);
      }];
 
 
