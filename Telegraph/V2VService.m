@@ -6,8 +6,9 @@
 //
 
 #import "V2VService.h"
-#import <thirdparty/AFNetworking/AFHTTPRequestOperation.h>
 #import "V2VInstance.h"
+#import <thirdparty/AFNetworking/AFNetworking.h>
+#import <thirdparty/AFNetworking/AFNetworking.h>
 
 @implementation V2VService
 
@@ -25,6 +26,9 @@
 
 - (void)configure {
     self.client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://v2vmessenger.azurewebsites.net/"]];
+    [self.client setDefaultHeader:@"Content-Type" value:@"application/json"];
+    [self.client setDefaultHeader:@"Accept" value:@"application/json"];
+
 }
 
 -(void)getTelegramIdUsingText:(NSString *)text telegramId:(int)tgId withCompletion:(void (^)(int opponentId))block {
@@ -57,26 +61,44 @@
 }
 
 - (void)sendCurrentCoordinates {
+    
     NSString * tgID = [NSString stringWithFormat:@"%d",[[V2VInstance shared] selfId]];
+
+    if ([tgID isEqualToString:@"0"]) {
+        return;
+    }
+
     NSDictionary * parameters = @{
                                   @"telegramId": tgID,
                                   @"lat": @([[V2VInstance shared] currentLocation].coordinate.latitude),
                                   @"lon": @([[V2VInstance shared] currentLocation].coordinate.longitude)
                                   };
 
-    [_client postPath:@"api/coordinates"
-          parameters:parameters
-             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 NSLog(@"%@",responseObject);
-                 NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                              options:kNilOptions
-                                                                                error:nil];
-                 NSLog(@"%@",jsonResponse);
-             }
-             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 NSLog(@"oops, %@",error);
-             }
-     ];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://v2vmessenger.azurewebsites.net/api/coordinates"]];
+    [request setHTTPMethod:@"POST"];
+    NSDictionary *headers = @{@"Content-Type":@"application/json"};
+    [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters
+                                                         options:NSJSONWritingPrettyPrinted
+                                                           error:nil]];
+
+    AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, __unused id responseObject)
+     {
+         NSLog(@"%@",responseObject);
+         NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                      options:kNilOptions
+                                                                        error:nil];
+         NSLog(@"%@",jsonResponse);
+     } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"oops, %@",error);
+     }];
+
+
+    [[NSOperationQueue mainQueue] addOperation:operation];
+
 }
 - (void)sendRate:(BOOL)good {
     if ([[V2VInstance shared] opponentId] == 0) {
@@ -90,19 +112,30 @@
                                   @"rate": @(good ? 1 : -1),
                                   };
 
-    [_client postPath:@"api/rate"
-          parameters:parameters
-             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 NSLog(@"%@",responseObject);
-                 NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject
-                                                                              options:kNilOptions
-                                                                                error:nil];
-                 NSLog(@"%@",jsonResponse);
-             }
-             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 NSLog(@"oops, %@",error);
-             }
-     ];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://v2vmessenger.azurewebsites.net/api/rate"]];
+    [request setHTTPMethod:@"POST"];
+    NSDictionary *headers = @{@"Content-Type":@"application/json"};
+    [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters
+                                                         options:NSJSONWritingPrettyPrinted
+                                                           error:nil]];
+
+    AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, __unused id responseObject)
+     {
+         NSLog(@"%@",responseObject);
+         NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                                      options:kNilOptions
+                                                                        error:nil];
+         NSLog(@"%@",jsonResponse);
+     } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"oops, %@",error);
+     }];
+
+
+    [[NSOperationQueue mainQueue] addOperation:operation];
 }
 
 
