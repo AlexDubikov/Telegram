@@ -33,6 +33,7 @@
 
 -(void)getTelegramIdUsingText:(NSString *)text telegramId:(int)tgId withCompletion:(void (^)(int opponentId))block {
 
+
     NSMutableDictionary * parameters = [@{
                                   @"message": text,
                                   @"lat": @([[V2VInstance shared] currentLocation].coordinate.latitude),

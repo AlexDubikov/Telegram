@@ -189,9 +189,14 @@ static const CGFloat tapToSpeakButtonSize = 60;
     [self.view addSubview:_leftButton];
     [self.view addSubview:_rightButton];
 
-    [self hideRecognition];
+    [self recognitionToFront];
+    [self recognitionButtonToFront];
 
     [_controller.closeButton addTarget:self action:@selector(stopAndHideRecognition) forControlEvents:UIControlEventTouchUpInside];
+    UIButton* closeButton = [[UIButton alloc] initWithFrame:CGRectMake(12, 30, 24, 24)];
+    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [closeButton addTarget:self action:@selector(closeConversation) forControlEvents:UIControlEventTouchUpInside];
+    [self.navBar addSubview:closeButton];
 }
 
 - (void)recognitionToFront {
@@ -208,6 +213,14 @@ static const CGFloat tapToSpeakButtonSize = 60;
 - (void)stopAndHideRecognition {
     [_controller.speechRecognizer stopRecognition];
     [self hideRecognition];
+}
+
+- (void)closeConversation {
+    _dataSource.messages = [NSMutableArray new];
+    [_table reloadData];
+    [self recognitionToFront];
+    [self recognitionButtonToFront];
+    _controller.speechTextView.text = @"Tap «+» and say\nsomething to a\nnearby driver";
 }
 
 - (void)hideRecognition {
@@ -231,6 +244,10 @@ static const CGFloat tapToSpeakButtonSize = 60;
 
 - (void)didRecognize:(NSString *)text {
 
+    if ([text isEqualToString:@"ERROR: Retry"]) {
+        return;
+    }
+
     TGMessage *message = [[TGMessage alloc] init];
     message.text = [NSString stringWithFormat:@"݆%@",text];
 
@@ -241,7 +258,7 @@ static const CGFloat tapToSpeakButtonSize = 60;
             [[V2VInstance shared] addIncomingMessage:text fromId:[[V2VInstance shared] selfId] toId:[[V2VInstance shared] opponentId]];
             [self hideRecognition];
         } else {
-            _controller.speechTextView.text = @"Couldn't find the car. Probably, it's not registered yet. Invite your friends to get +5 rating for each of them.";
+            [_controller showText:@"Couldn't find the car. Probably, it's not registered yet. Invite your friends to get +5 rating for each of them." withPronunciation:YES];
             [self recognitionButtonToFront];
         }
     }];

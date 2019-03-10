@@ -83,7 +83,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dky-ZP-cZp">
-                    <rect key="frame" x="332" y="32" width="19" height="22"/>
+                    <rect key="frame" x="16" y="30" width="19" height="22"/>
                     <state key="normal" image="close"/>
                 </button>
             </subviews>
@@ -91,14 +91,14 @@
             <constraints>
                 <constraint firstItem="ZUx-iO-V3V" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="159-JD-gKq"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Rnl-Rc-cjR" secondAttribute="bottom" constant="50" id="8St-gm-NEv"/>
-                <constraint firstItem="dky-ZP-cZp" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="12" id="Cax-Ge-f9r"/>
+                <constraint firstItem="dky-ZP-cZp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="Cax-Ge-f9r"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="JwO-CQ-byz" secondAttribute="bottom" constant="140" id="PAo-XV-NSH"/>
                 <constraint firstItem="JwO-CQ-byz" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="142" id="TZz-fS-tGk"/>
                 <constraint firstItem="Xq4-RY-tIM" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="32" id="VPb-ya-01a"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Rnl-Rc-cjR" secondAttribute="trailing" constant="32" id="Y1A-F0-cjK"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="ZUx-iO-V3V" secondAttribute="bottom" constant="48" id="ZJG-dV-mgX"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="dky-ZP-cZp" secondAttribute="trailing" constant="24" id="a0W-Er-T5q"/>
                 <constraint firstItem="wqx-Cg-wOc" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="88" id="eNV-Pi-mAM"/>
+                <constraint firstItem="dky-ZP-cZp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="gpw-nU-hAD"/>
                 <constraint firstItem="wqx-Cg-wOc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tja-6u-hg3"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Xq4-RY-tIM" secondAttribute="bottom" constant="50" id="vUo-u6-d64"/>
             </constraints>
